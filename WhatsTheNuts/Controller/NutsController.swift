@@ -5,8 +5,6 @@
 //  Created by Kevin Herro on 9/24/23.
 //
 
-import Algorithms
-
 typealias Hand = [Card]
 typealias Nuts = (handRank: HandRank, hand: Hand)
 
@@ -111,7 +109,7 @@ struct RoundController {
   let communityCards: [Card]
 
   init(communityCards: [Card]? = nil) {
-    deck = product(Suit.allCases, Rank.allCases)
+    deck = Suit.allCases.product(with: Rank.allCases)
       .map { Card(rank: $0.1, suit: $0.0) }
       .shuffled()
 

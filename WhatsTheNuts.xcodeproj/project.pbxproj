@@ -40,7 +40,8 @@
 		5D6EC0432AC09C9100E7D224 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6EC0412AC09C9000E7D224 /* ContentView.swift */; };
 		5D6EC0452AC09CED00E7D224 /* NutsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6EC0442AC09CED00E7D224 /* NutsController.swift */; };
 		5D6EC0462AC09CED00E7D224 /* NutsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6EC0442AC09CED00E7D224 /* NutsController.swift */; };
-		5D6EC0492AC09D2400E7D224 /* Algorithms in Frameworks */ = {isa = PBXBuildFile; productRef = 5D6EC0482AC09D2400E7D224 /* Algorithms */; };
+		5D6EC04B2AC0AA6900E7D224 /* Array+Operations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6EC04A2AC0AA6900E7D224 /* Array+Operations.swift */; };
+		5D6EC04C2AC0AA6900E7D224 /* Array+Operations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6EC04A2AC0AA6900E7D224 /* Array+Operations.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +89,7 @@
 		5D6EC03E2AC09C5300E7D224 /* ModePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModePicker.swift; sourceTree = "<group>"; };
 		5D6EC0412AC09C9000E7D224 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		5D6EC0442AC09CED00E7D224 /* NutsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutsController.swift; sourceTree = "<group>"; };
+		5D6EC04A2AC0AA6900E7D224 /* Array+Operations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Operations.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,7 +97,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5D6EC0492AC09D2400E7D224 /* Algorithms in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -189,6 +190,7 @@
 			children = (
 				5D6EC0192AC096F000E7D224 /* UIScreen+CurrentScreen.swift */,
 				5D6EC01B2AC0971C00E7D224 /* Color+Gruvbox.swift */,
+				5D6EC04A2AC0AA6900E7D224 /* Array+Operations.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -246,7 +248,6 @@
 			);
 			name = WhatsTheNuts;
 			packageProductDependencies = (
-				5D6EC0482AC09D2400E7D224 /* Algorithms */,
 			);
 			productName = WhatsTheNuts;
 			productReference = 5D6EBFE82AC096A500E7D224 /* WhatsTheNuts.app */;
@@ -321,7 +322,6 @@
 			);
 			mainGroup = 5D6EBFDF2AC096A500E7D224;
 			packageReferences = (
-				5D6EC0472AC09D2400E7D224 /* XCRemoteSwiftPackageReference "swift-algorithms" */,
 			);
 			productRefGroup = 5D6EBFE92AC096A500E7D224 /* Products */;
 			projectDirPath = "";
@@ -372,6 +372,7 @@
 				5D6EC0362AC09B9600E7D224 /* LaunchScreenView.swift in Sources */,
 				5D6EC0392AC09BBA00E7D224 /* CheckButton.swift in Sources */,
 				5D6EC0332AC0986000E7D224 /* SelectionGridView.swift in Sources */,
+				5D6EC04B2AC0AA6900E7D224 /* Array+Operations.swift in Sources */,
 				5D6EC0422AC09C9100E7D224 /* ContentView.swift in Sources */,
 				5D6EC0452AC09CED00E7D224 /* NutsController.swift in Sources */,
 				5D6EC03F2AC09C5300E7D224 /* ModePicker.swift in Sources */,
@@ -391,6 +392,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D6EC04C2AC0AA6900E7D224 /* Array+Operations.swift in Sources */,
 				5D6EBFFD2AC096A700E7D224 /* WhatsTheNutsTests.swift in Sources */,
 				5D6EC0462AC09CED00E7D224 /* NutsController.swift in Sources */,
 			);
@@ -722,25 +724,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		5D6EC0472AC09D2400E7D224 /* XCRemoteSwiftPackageReference "swift-algorithms" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/apple/swift-algorithms.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		5D6EC0482AC09D2400E7D224 /* Algorithms */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 5D6EC0472AC09D2400E7D224 /* XCRemoteSwiftPackageReference "swift-algorithms" */;
-			productName = Algorithms;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 5D6EBFE02AC096A500E7D224 /* Project object */;
 }
