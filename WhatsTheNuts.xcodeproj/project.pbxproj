@@ -11,8 +11,6 @@
 		5D6EBFF02AC096A600E7D224 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D6EBFEF2AC096A600E7D224 /* Assets.xcassets */; };
 		5D6EBFF32AC096A600E7D224 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D6EBFF22AC096A600E7D224 /* Preview Assets.xcassets */; };
 		5D6EBFFD2AC096A700E7D224 /* WhatsTheNutsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6EBFFC2AC096A700E7D224 /* WhatsTheNutsTests.swift */; };
-		5D6EC0072AC096A700E7D224 /* WhatsTheNutsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6EC0062AC096A700E7D224 /* WhatsTheNutsUITests.swift */; };
-		5D6EC0092AC096A700E7D224 /* WhatsTheNutsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6EC0082AC096A700E7D224 /* WhatsTheNutsUITestsLaunchTests.swift */; };
 		5D6EC0172AC096C900E7D224 /* CommonButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6EC0162AC096C900E7D224 /* CommonButtonStyle.swift */; };
 		5D6EC01A2AC096F000E7D224 /* UIScreen+CurrentScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6EC0192AC096F000E7D224 /* UIScreen+CurrentScreen.swift */; };
 		5D6EC01C2AC0971C00E7D224 /* Color+Gruvbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6EC01B2AC0971C00E7D224 /* Color+Gruvbox.swift */; };
@@ -23,21 +21,13 @@
 		5D6EC0292AC097D200E7D224 /* HandRank.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6EC0282AC097D200E7D224 /* HandRank.swift */; };
 		5D6EC02B2AC097E900E7D224 /* Mode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6EC02A2AC097E900E7D224 /* Mode.swift */; };
 		5D6EC02D2AC0980600E7D224 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6EC02C2AC0980600E7D224 /* CardView.swift */; };
-		5D6EC02E2AC0980600E7D224 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6EC02C2AC0980600E7D224 /* CardView.swift */; };
 		5D6EC0302AC0983400E7D224 /* CommunityCardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6EC02F2AC0983400E7D224 /* CommunityCardsView.swift */; };
-		5D6EC0312AC0983400E7D224 /* CommunityCardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6EC02F2AC0983400E7D224 /* CommunityCardsView.swift */; };
 		5D6EC0332AC0986000E7D224 /* SelectionGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6EC0322AC0986000E7D224 /* SelectionGridView.swift */; };
-		5D6EC0342AC0986000E7D224 /* SelectionGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6EC0322AC0986000E7D224 /* SelectionGridView.swift */; };
 		5D6EC0362AC09B9600E7D224 /* LaunchScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6EC0352AC09B9600E7D224 /* LaunchScreenView.swift */; };
-		5D6EC0372AC09B9600E7D224 /* LaunchScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6EC0352AC09B9600E7D224 /* LaunchScreenView.swift */; };
 		5D6EC0392AC09BBA00E7D224 /* CheckButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6EC0382AC09BBA00E7D224 /* CheckButton.swift */; };
-		5D6EC03A2AC09BBA00E7D224 /* CheckButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6EC0382AC09BBA00E7D224 /* CheckButton.swift */; };
 		5D6EC03C2AC09C1C00E7D224 /* FeedbackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6EC03B2AC09C1C00E7D224 /* FeedbackView.swift */; };
-		5D6EC03D2AC09C1C00E7D224 /* FeedbackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6EC03B2AC09C1C00E7D224 /* FeedbackView.swift */; };
 		5D6EC03F2AC09C5300E7D224 /* ModePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6EC03E2AC09C5300E7D224 /* ModePicker.swift */; };
-		5D6EC0402AC09C5300E7D224 /* ModePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6EC03E2AC09C5300E7D224 /* ModePicker.swift */; };
 		5D6EC0422AC09C9100E7D224 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6EC0412AC09C9000E7D224 /* ContentView.swift */; };
-		5D6EC0432AC09C9100E7D224 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6EC0412AC09C9000E7D224 /* ContentView.swift */; };
 		5D6EC0452AC09CED00E7D224 /* NutsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6EC0442AC09CED00E7D224 /* NutsController.swift */; };
 		5D6EC0462AC09CED00E7D224 /* NutsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6EC0442AC09CED00E7D224 /* NutsController.swift */; };
 		5D6EC04B2AC0AA6900E7D224 /* Array+Operations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6EC04A2AC0AA6900E7D224 /* Array+Operations.swift */; };
@@ -46,13 +36,6 @@
 
 /* Begin PBXContainerItemProxy section */
 		5D6EBFF92AC096A700E7D224 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5D6EBFE02AC096A500E7D224 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 5D6EBFE72AC096A500E7D224;
-			remoteInfo = WhatsTheNuts;
-		};
-		5D6EC0032AC096A700E7D224 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 5D6EBFE02AC096A500E7D224 /* Project object */;
 			proxyType = 1;
@@ -68,9 +51,6 @@
 		5D6EBFF22AC096A600E7D224 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		5D6EBFF82AC096A700E7D224 /* WhatsTheNutsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WhatsTheNutsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D6EBFFC2AC096A700E7D224 /* WhatsTheNutsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatsTheNutsTests.swift; sourceTree = "<group>"; };
-		5D6EC0022AC096A700E7D224 /* WhatsTheNutsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WhatsTheNutsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		5D6EC0062AC096A700E7D224 /* WhatsTheNutsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatsTheNutsUITests.swift; sourceTree = "<group>"; };
-		5D6EC0082AC096A700E7D224 /* WhatsTheNutsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatsTheNutsUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		5D6EC0162AC096C900E7D224 /* CommonButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonButtonStyle.swift; sourceTree = "<group>"; };
 		5D6EC0192AC096F000E7D224 /* UIScreen+CurrentScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScreen+CurrentScreen.swift"; sourceTree = "<group>"; };
 		5D6EC01B2AC0971C00E7D224 /* Color+Gruvbox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Gruvbox.swift"; sourceTree = "<group>"; };
@@ -107,13 +87,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5D6EBFFF2AC096A700E7D224 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -122,7 +95,6 @@
 			children = (
 				5D6EBFEA2AC096A500E7D224 /* WhatsTheNuts */,
 				5D6EBFFB2AC096A700E7D224 /* WhatsTheNutsTests */,
-				5D6EC0052AC096A700E7D224 /* WhatsTheNutsUITests */,
 				5D6EBFE92AC096A500E7D224 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -132,7 +104,6 @@
 			children = (
 				5D6EBFE82AC096A500E7D224 /* WhatsTheNuts.app */,
 				5D6EBFF82AC096A700E7D224 /* WhatsTheNutsTests.xctest */,
-				5D6EC0022AC096A700E7D224 /* WhatsTheNutsUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -166,15 +137,6 @@
 				5D6EBFFC2AC096A700E7D224 /* WhatsTheNutsTests.swift */,
 			);
 			path = WhatsTheNutsTests;
-			sourceTree = "<group>";
-		};
-		5D6EC0052AC096A700E7D224 /* WhatsTheNutsUITests */ = {
-			isa = PBXGroup;
-			children = (
-				5D6EC0062AC096A700E7D224 /* WhatsTheNutsUITests.swift */,
-				5D6EC0082AC096A700E7D224 /* WhatsTheNutsUITestsLaunchTests.swift */,
-			);
-			path = WhatsTheNutsUITests;
 			sourceTree = "<group>";
 		};
 		5D6EC0152AC096B300E7D224 /* Style */ = {
@@ -271,24 +233,6 @@
 			productReference = 5D6EBFF82AC096A700E7D224 /* WhatsTheNutsTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		5D6EC0012AC096A700E7D224 /* WhatsTheNutsUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 5D6EC0122AC096A700E7D224 /* Build configuration list for PBXNativeTarget "WhatsTheNutsUITests" */;
-			buildPhases = (
-				5D6EBFFE2AC096A700E7D224 /* Sources */,
-				5D6EBFFF2AC096A700E7D224 /* Frameworks */,
-				5D6EC0002AC096A700E7D224 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				5D6EC0042AC096A700E7D224 /* PBXTargetDependency */,
-			);
-			name = WhatsTheNutsUITests;
-			productName = WhatsTheNutsUITests;
-			productReference = 5D6EC0022AC096A700E7D224 /* WhatsTheNutsUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -303,10 +247,6 @@
 						CreatedOnToolsVersion = 15.0;
 					};
 					5D6EBFF72AC096A700E7D224 = {
-						CreatedOnToolsVersion = 15.0;
-						TestTargetID = 5D6EBFE72AC096A500E7D224;
-					};
-					5D6EC0012AC096A700E7D224 = {
 						CreatedOnToolsVersion = 15.0;
 						TestTargetID = 5D6EBFE72AC096A500E7D224;
 					};
@@ -329,7 +269,6 @@
 			targets = (
 				5D6EBFE72AC096A500E7D224 /* WhatsTheNuts */,
 				5D6EBFF72AC096A700E7D224 /* WhatsTheNutsTests */,
-				5D6EC0012AC096A700E7D224 /* WhatsTheNutsUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -345,13 +284,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		5D6EBFF62AC096A700E7D224 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		5D6EC0002AC096A700E7D224 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -398,23 +330,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5D6EBFFE2AC096A700E7D224 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				5D6EC0312AC0983400E7D224 /* CommunityCardsView.swift in Sources */,
-				5D6EC0092AC096A700E7D224 /* WhatsTheNutsUITestsLaunchTests.swift in Sources */,
-				5D6EC02E2AC0980600E7D224 /* CardView.swift in Sources */,
-				5D6EC0072AC096A700E7D224 /* WhatsTheNutsUITests.swift in Sources */,
-				5D6EC0342AC0986000E7D224 /* SelectionGridView.swift in Sources */,
-				5D6EC03D2AC09C1C00E7D224 /* FeedbackView.swift in Sources */,
-				5D6EC0432AC09C9100E7D224 /* ContentView.swift in Sources */,
-				5D6EC0372AC09B9600E7D224 /* LaunchScreenView.swift in Sources */,
-				5D6EC03A2AC09BBA00E7D224 /* CheckButton.swift in Sources */,
-				5D6EC0402AC09C5300E7D224 /* ModePicker.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -422,11 +337,6 @@
 			isa = PBXTargetDependency;
 			target = 5D6EBFE72AC096A500E7D224 /* WhatsTheNuts */;
 			targetProxy = 5D6EBFF92AC096A700E7D224 /* PBXContainerItemProxy */;
-		};
-		5D6EC0042AC096A700E7D224 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 5D6EBFE72AC096A500E7D224 /* WhatsTheNuts */;
-			targetProxy = 5D6EC0032AC096A700E7D224 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -561,11 +471,14 @@
 				DEVELOPMENT_TEAM = 7H4U53Q9QS;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "What's The Nuts?";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.card-games";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIStatusBarHidden = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDarkContent;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -573,6 +486,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.kevherro.WhatsTheNuts;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -590,11 +506,14 @@
 				DEVELOPMENT_TEAM = 7H4U53Q9QS;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "What's The Nuts?";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.card-games";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIStatusBarHidden = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDarkContent;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -602,6 +521,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.kevherro.WhatsTheNuts;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -621,6 +543,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.kevherro.WhatsTheNutsTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -641,46 +566,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.kevherro.WhatsTheNutsTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WhatsTheNuts.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/WhatsTheNuts";
-			};
-			name = Release;
-		};
-		5D6EC0132AC096A700E7D224 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 7H4U53Q9QS;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.kevherro.WhatsTheNutsUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = WhatsTheNuts;
-			};
-			name = Debug;
-		};
-		5D6EC0142AC096A700E7D224 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 7H4U53Q9QS;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.kevherro.WhatsTheNutsUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = WhatsTheNuts;
 			};
 			name = Release;
 		};
@@ -710,15 +602,6 @@
 			buildConfigurations = (
 				5D6EC0102AC096A700E7D224 /* Debug */,
 				5D6EC0112AC096A700E7D224 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		5D6EC0122AC096A700E7D224 /* Build configuration list for PBXNativeTarget "WhatsTheNutsUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				5D6EC0132AC096A700E7D224 /* Debug */,
-				5D6EC0142AC096A700E7D224 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
