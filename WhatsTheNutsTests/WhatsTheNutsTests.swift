@@ -6,31 +6,78 @@
 //
 
 import XCTest
+
 @testable import WhatsTheNuts
 
 final class WhatsTheNutsTests: XCTestCase {
+  func testRoyalFlush() {
+    let communityCards = [
+      Card(rank: .ten, suit: .club),
+      Card(rank: .jack, suit: .club),
+      Card(rank: .queen, suit: .club),
+      Card(rank: .king, suit: .club),
+      Card(rank: .ace, suit: .club),
+    ]
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
+    let roundController = RoundController(communityCards: communityCards)
+    let nutsController = NutsController(round: roundController)
 
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
+    let (bestRank, bestHand) = nutsController.nuts()
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
-    }
+    XCTAssertEqual(bestRank, HandRank.royalFlush)
 
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
+    // Verify the cards in the best hand.
+    XCTAssertEqual(bestHand.count, 5)
+    XCTAssert(bestHand.contains(Card(rank: .ten, suit: .club)))
+    XCTAssert(bestHand.contains(Card(rank: .jack, suit: .club)))
+    XCTAssert(bestHand.contains(Card(rank: .queen, suit: .club)))
+    XCTAssert(bestHand.contains(Card(rank: .king, suit: .club)))
+    XCTAssert(bestHand.contains(Card(rank: .ace, suit: .club)))
+  }
 
+  func testFourOfAKind() {
+    let communityCards = [
+      Card(rank: .ten, suit: .club),
+      Card(rank: .ten, suit: .spade),
+      Card(rank: .seven, suit: .heart),
+      Card(rank: .two, suit: .club),
+      Card(rank: .three, suit: .heart),
+    ]
+
+    let roundController = RoundController(communityCards: communityCards)
+    let nutsController = NutsController(round: roundController)
+
+    let (bestRank, bestHand) = nutsController.nuts()
+
+    XCTAssertEqual(bestRank, HandRank.fourOfAKind)
+
+    // Verify the cards in the best hand.
+    XCTAssertEqual(bestHand.count, 5)
+    XCTAssert(bestHand.contains(Card(rank: .ten, suit: .club)))
+    XCTAssert(bestHand.contains(Card(rank: .ten, suit: .diamond)))
+    XCTAssert(bestHand.contains(Card(rank: .ten, suit: .heart)))
+    XCTAssert(bestHand.contains(Card(rank: .ten, suit: .spade)))
+  }
+
+  func testStraightFlush() {
+    let communityCards = [
+      Card(rank: .two, suit: .club),
+      Card(rank: .two, suit: .spade),
+      Card(rank: .five, suit: .club),
+      Card(rank: .six, suit: .club),
+      Card(rank: .nine, suit: .heart),
+    ]
+
+    let roundController = RoundController(communityCards: communityCards)
+    let nutsController = NutsController(round: roundController)
+
+    let (bestRank, bestHand) = nutsController.nuts()
+
+    XCTAssertEqual(bestRank, HandRank.straightFlush)
+
+    // Verify the cards in the best hand.
+    XCTAssertEqual(bestHand.count, 5)
+    XCTAssert(bestHand.contains(Card(rank: .three, suit: .club)))
+    XCTAssert(bestHand.contains(Card(rank: .four, suit: .club)))
+  }
 }
