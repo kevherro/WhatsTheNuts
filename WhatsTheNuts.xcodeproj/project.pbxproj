@@ -32,6 +32,24 @@
 		5D6EC0462AC09CED00E7D224 /* NutsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6EC0442AC09CED00E7D224 /* NutsController.swift */; };
 		5D6EC04B2AC0AA6900E7D224 /* Array+Operations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6EC04A2AC0AA6900E7D224 /* Array+Operations.swift */; };
 		5D6EC04C2AC0AA6900E7D224 /* Array+Operations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6EC04A2AC0AA6900E7D224 /* Array+Operations.swift */; };
+		5D6EC04D2AC0B11000E7D224 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6EC0202AC0979000E7D224 /* Card.swift */; };
+		5D6EC04E2AC0B11600E7D224 /* Rank.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6EC0222AC0979F00E7D224 /* Rank.swift */; };
+		5D6EC04F2AC0B11800E7D224 /* Suit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6EC0242AC097AD00E7D224 /* Suit.swift */; };
+		5D6EC0502AC0B11A00E7D224 /* Selection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6EC0262AC097BF00E7D224 /* Selection.swift */; };
+		5D6EC0512AC0B11D00E7D224 /* HandRank.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6EC0282AC097D200E7D224 /* HandRank.swift */; };
+		5D6EC0522AC0B11F00E7D224 /* Mode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6EC02A2AC097E900E7D224 /* Mode.swift */; };
+		5D6EC0532AC0B12100E7D224 /* UIScreen+CurrentScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6EC0192AC096F000E7D224 /* UIScreen+CurrentScreen.swift */; };
+		5D6EC0542AC0B12400E7D224 /* Color+Gruvbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6EC01B2AC0971C00E7D224 /* Color+Gruvbox.swift */; };
+		5D6EC0552AC0B12B00E7D224 /* CommonButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6EC0162AC096C900E7D224 /* CommonButtonStyle.swift */; };
+		5D6EC0562AC0B12E00E7D224 /* WhatsTheNutsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6EBFEB2AC096A500E7D224 /* WhatsTheNutsApp.swift */; };
+		5D6EC0572AC0B15700E7D224 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6EC02C2AC0980600E7D224 /* CardView.swift */; };
+		5D6EC0582AC0B15900E7D224 /* CommunityCardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6EC02F2AC0983400E7D224 /* CommunityCardsView.swift */; };
+		5D6EC0592AC0B15C00E7D224 /* SelectionGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6EC0322AC0986000E7D224 /* SelectionGridView.swift */; };
+		5D6EC05A2AC0B15E00E7D224 /* LaunchScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6EC0352AC09B9600E7D224 /* LaunchScreenView.swift */; };
+		5D6EC05B2AC0B16000E7D224 /* CheckButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6EC0382AC09BBA00E7D224 /* CheckButton.swift */; };
+		5D6EC05C2AC0B16300E7D224 /* FeedbackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6EC03B2AC09C1C00E7D224 /* FeedbackView.swift */; };
+		5D6EC05D2AC0B16600E7D224 /* ModePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6EC03E2AC09C5300E7D224 /* ModePicker.swift */; };
+		5D6EC05E2AC0B16800E7D224 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6EC0412AC09C9000E7D224 /* ContentView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -324,9 +342,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D6EC0572AC0B15700E7D224 /* CardView.swift in Sources */,
+				5D6EC0512AC0B11D00E7D224 /* HandRank.swift in Sources */,
+				5D6EC05E2AC0B16800E7D224 /* ContentView.swift in Sources */,
+				5D6EC0502AC0B11A00E7D224 /* Selection.swift in Sources */,
 				5D6EC04C2AC0AA6900E7D224 /* Array+Operations.swift in Sources */,
+				5D6EC05B2AC0B16000E7D224 /* CheckButton.swift in Sources */,
+				5D6EC05A2AC0B15E00E7D224 /* LaunchScreenView.swift in Sources */,
+				5D6EC05D2AC0B16600E7D224 /* ModePicker.swift in Sources */,
+				5D6EC0562AC0B12E00E7D224 /* WhatsTheNutsApp.swift in Sources */,
 				5D6EBFFD2AC096A700E7D224 /* WhatsTheNutsTests.swift in Sources */,
 				5D6EC0462AC09CED00E7D224 /* NutsController.swift in Sources */,
+				5D6EC0532AC0B12100E7D224 /* UIScreen+CurrentScreen.swift in Sources */,
+				5D6EC04E2AC0B11600E7D224 /* Rank.swift in Sources */,
+				5D6EC0592AC0B15C00E7D224 /* SelectionGridView.swift in Sources */,
+				5D6EC0542AC0B12400E7D224 /* Color+Gruvbox.swift in Sources */,
+				5D6EC0552AC0B12B00E7D224 /* CommonButtonStyle.swift in Sources */,
+				5D6EC05C2AC0B16300E7D224 /* FeedbackView.swift in Sources */,
+				5D6EC04F2AC0B11800E7D224 /* Suit.swift in Sources */,
+				5D6EC04D2AC0B11000E7D224 /* Card.swift in Sources */,
+				5D6EC0582AC0B15900E7D224 /* CommunityCardsView.swift in Sources */,
+				5D6EC0522AC0B11F00E7D224 /* Mode.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
