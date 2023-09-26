@@ -21,6 +21,14 @@ extension UIWindow {
 // MARK: UIScreen
 
 extension UIScreen {
+  static var height: CGFloat {
+    return UIScreen.associatedWithCurrentKeyWindow.bounds.height
+  }
+
+  static var width: CGFloat {
+    return UIScreen.associatedWithCurrentKeyWindow.bounds.width
+  }
+
   static var associatedWithCurrentKeyWindow: UIScreen {
     // Only use the deprecated version if we have to.
     return UIWindow.currentKey?.screen ?? UIScreen.main
