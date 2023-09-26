@@ -17,7 +17,6 @@ struct CommunityCardsView: View {
         CardView(card: communityCards[1])
         CardView(card: communityCards[2])
       }
-      .padding(.bottom, 10)
       HStack {
         CardView(card: communityCards[3])
         CardView(card: communityCards[4])

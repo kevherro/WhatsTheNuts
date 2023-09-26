@@ -65,7 +65,7 @@ private enum SelectionButtonState: ButtonState {
 
   var textColor: Color {
     switch self {
-    case .default: return .grey
+    case .default: return .gray
     case .selected: return .text
     }
   }

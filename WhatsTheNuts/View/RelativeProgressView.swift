@@ -14,7 +14,7 @@ struct RelativeProgressView: View {
     ZStack {
       HStack {
         TimerButton(isActive: isTimerStarted) {
-          DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+          DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
             withAnimation {
               self.isTimerStarted.toggle()
             }
@@ -30,7 +30,6 @@ struct RelativeProgressView: View {
           .rotationEffect(.degrees(180))
           .tint(.brightGreen)
           .frame(width: UIScreen.width / 1.5)
-          .offset(x: 25)
         }
       }
     }
@@ -45,7 +44,10 @@ private struct TimerButton: View {
   var body: some View {
     Button(action: onTap) {
       Image(systemName: "timer")
+        .resizable()
+        .frame(width: 20, height: 20)
         .foregroundStyle(isActive ? Color.brightGreen : Color.gray)
+        .bold(isActive)
     }
   }
 }

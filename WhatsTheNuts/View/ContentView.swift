@@ -23,10 +23,11 @@ struct ContentView: View {
 
       VStack {
         RelativeProgressView()
-          .padding(.top, 10)
+          .padding(.top, 5)
+          .padding(.bottom, 10)
 
         CommunityCardsView(communityCards: nutsController.communityCards)
-          .padding(.top, 30)
+          .offset(y: 10)
 
         SelectionGridView(selection: selection)
 

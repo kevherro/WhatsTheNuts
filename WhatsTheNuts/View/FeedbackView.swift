@@ -35,7 +35,7 @@ struct FeedbackView: View {
     } else {
       return AnyView(
         IncorrectView(correctAnswer: correctAnswer)
-          .frame(maxHeight: screenHeight / 5.8)
+          .frame(maxHeight: screenHeight / 5.5)
       )
     }
   }
