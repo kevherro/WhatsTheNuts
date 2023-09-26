@@ -12,7 +12,7 @@ struct FeedbackView: View {
   var correctAnswer: HandStrength
 
   private var screenHeight: CGFloat {
-    UIScreen.associatedWithCurrentKeyWindow.bounds.height
+    UIScreen.height
   }
 
   var body: some View {
@@ -35,7 +35,7 @@ struct FeedbackView: View {
     } else {
       return AnyView(
         IncorrectView(correctAnswer: correctAnswer)
-          .frame(maxHeight: screenHeight / 5.8)
+          .frame(maxHeight: screenHeight / 5.5)
       )
     }
   }

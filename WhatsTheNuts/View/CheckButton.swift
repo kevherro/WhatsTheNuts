@@ -34,7 +34,10 @@ struct CheckButton: View {
     )
     .buttonStyle(
       CommonButtonStyle(
-        buttonState: buttonState
+        buttonState: buttonState,
+        buttonHeight: 35,
+        normalOffset: 40,
+        pressedOffset: 43
       )
     )
     .disabled(selection.currentSelection == nil)
