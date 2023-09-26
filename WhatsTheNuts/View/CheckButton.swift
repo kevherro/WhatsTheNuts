@@ -41,6 +41,7 @@ struct CheckButton: View {
       )
     )
     .disabled(selection.currentSelection == nil)
+    .sensoryFeedback(.success, trigger: buttonState == .correct)
   }
 
   private func check() {
