@@ -22,7 +22,6 @@ xcuserdata/
 .build/
 Packages/
 Package.pins
-*.xcodeproj
 
 # Code Coverage #
 #################
