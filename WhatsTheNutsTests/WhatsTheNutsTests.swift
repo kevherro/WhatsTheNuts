@@ -20,19 +20,9 @@ final class WhatsTheNutsTests: XCTestCase {
     ]
 
     let roundController = RoundController(communityCards: communityCards)
-    let nutsController = NutsController(round: roundController)
+    var nutsController = NutsController(round: roundController)
 
-    let (bestRank, bestHand) = nutsController.nuts()
-
-    XCTAssertEqual(bestRank, HandRank.royalFlush)
-
-    // Verify the cards in the best hand.
-    XCTAssertEqual(bestHand.count, 5)
-    XCTAssert(bestHand.contains(Card(rank: .ten, suit: .club)))
-    XCTAssert(bestHand.contains(Card(rank: .jack, suit: .club)))
-    XCTAssert(bestHand.contains(Card(rank: .queen, suit: .club)))
-    XCTAssert(bestHand.contains(Card(rank: .king, suit: .club)))
-    XCTAssert(bestHand.contains(Card(rank: .ace, suit: .club)))
+    XCTAssertEqual(nutsController.strongestHand, HandStrength.royalFlush)
   }
 
   func testFourOfAKind() {
@@ -45,18 +35,9 @@ final class WhatsTheNutsTests: XCTestCase {
     ]
 
     let roundController = RoundController(communityCards: communityCards)
-    let nutsController = NutsController(round: roundController)
+    var nutsController = NutsController(round: roundController)
 
-    let (bestRank, bestHand) = nutsController.nuts()
-
-    XCTAssertEqual(bestRank, HandRank.fourOfAKind)
-
-    // Verify the cards in the best hand.
-    XCTAssertEqual(bestHand.count, 5)
-    XCTAssert(bestHand.contains(Card(rank: .ten, suit: .club)))
-    XCTAssert(bestHand.contains(Card(rank: .ten, suit: .diamond)))
-    XCTAssert(bestHand.contains(Card(rank: .ten, suit: .heart)))
-    XCTAssert(bestHand.contains(Card(rank: .ten, suit: .spade)))
+    XCTAssertEqual(nutsController.strongestHand, HandStrength.fourOfAKind)
   }
 
   func testStraightFlush() {
@@ -69,15 +50,8 @@ final class WhatsTheNutsTests: XCTestCase {
     ]
 
     let roundController = RoundController(communityCards: communityCards)
-    let nutsController = NutsController(round: roundController)
+    var nutsController = NutsController(round: roundController)
 
-    let (bestRank, bestHand) = nutsController.nuts()
-
-    XCTAssertEqual(bestRank, HandRank.straightFlush)
-
-    // Verify the cards in the best hand.
-    XCTAssertEqual(bestHand.count, 5)
-    XCTAssert(bestHand.contains(Card(rank: .three, suit: .club)))
-    XCTAssert(bestHand.contains(Card(rank: .four, suit: .club)))
+    XCTAssertEqual(nutsController.strongestHand, HandStrength.straightFlush)
   }
 }

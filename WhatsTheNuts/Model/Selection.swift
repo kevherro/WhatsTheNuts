@@ -8,11 +8,11 @@
 import SwiftUI
 
 class Selection: ObservableObject {
-  @Published var pressedStates: [HandRank: Bool] = [:]
-  @Published var currentSelection: HandRank?
-  @Published private(set) var finalSelection: HandRank?
+  @Published var pressedStates: [HandStrength: Bool] = [:]
+  @Published var currentSelection: HandStrength?
+  @Published private(set) var finalSelection: HandStrength?
 
-  func binding(for key: HandRank) -> Binding<Bool> {
+  func binding(for key: HandStrength) -> Binding<Bool> {
     .init(
       get: { self.pressedStates[key, default: false] },
       set: {

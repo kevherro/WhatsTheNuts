@@ -17,7 +17,7 @@ struct SelectionGridView: View {
 
   var body: some View {
     LazyVGrid(columns: columns) {
-      ForEach(HandRank.allCases, id: \.self) { option in
+      ForEach(HandStrength.allCases, id: \.self) { option in
         Button(
           action: {
             // Reset the last selected option to false.

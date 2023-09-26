@@ -9,7 +9,7 @@ import SwiftUI
 
 struct FeedbackView: View {
   var isCorrect: Bool
-  var correctAnswer: HandRank
+  var correctAnswer: HandStrength
 
   private var screenHeight: CGFloat {
     UIScreen.associatedWithCurrentKeyWindow.bounds.height
@@ -72,7 +72,7 @@ private struct StatusView: View {
 // MARK: IncorrectView
 
 private struct IncorrectView: View {
-  var correctAnswer: HandRank
+  var correctAnswer: HandStrength
 
   var body: some View {
     ZStack {

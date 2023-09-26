@@ -18,7 +18,7 @@
 		5D6EC0232AC0979F00E7D224 /* Rank.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6EC0222AC0979F00E7D224 /* Rank.swift */; };
 		5D6EC0252AC097AD00E7D224 /* Suit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6EC0242AC097AD00E7D224 /* Suit.swift */; };
 		5D6EC0272AC097BF00E7D224 /* Selection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6EC0262AC097BF00E7D224 /* Selection.swift */; };
-		5D6EC0292AC097D200E7D224 /* HandRank.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6EC0282AC097D200E7D224 /* HandRank.swift */; };
+		5D6EC0292AC097D200E7D224 /* HandStrength.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6EC0282AC097D200E7D224 /* HandStrength.swift */; };
 		5D6EC02B2AC097E900E7D224 /* Mode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6EC02A2AC097E900E7D224 /* Mode.swift */; };
 		5D6EC02D2AC0980600E7D224 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6EC02C2AC0980600E7D224 /* CardView.swift */; };
 		5D6EC0302AC0983400E7D224 /* CommunityCardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6EC02F2AC0983400E7D224 /* CommunityCardsView.swift */; };
@@ -30,26 +30,16 @@
 		5D6EC0422AC09C9100E7D224 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6EC0412AC09C9000E7D224 /* ContentView.swift */; };
 		5D6EC0452AC09CED00E7D224 /* NutsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6EC0442AC09CED00E7D224 /* NutsController.swift */; };
 		5D6EC0462AC09CED00E7D224 /* NutsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6EC0442AC09CED00E7D224 /* NutsController.swift */; };
-		5D6EC04B2AC0AA6900E7D224 /* Array+Operations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6EC04A2AC0AA6900E7D224 /* Array+Operations.swift */; };
-		5D6EC04C2AC0AA6900E7D224 /* Array+Operations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6EC04A2AC0AA6900E7D224 /* Array+Operations.swift */; };
 		5D6EC04D2AC0B11000E7D224 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6EC0202AC0979000E7D224 /* Card.swift */; };
 		5D6EC04E2AC0B11600E7D224 /* Rank.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6EC0222AC0979F00E7D224 /* Rank.swift */; };
 		5D6EC04F2AC0B11800E7D224 /* Suit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6EC0242AC097AD00E7D224 /* Suit.swift */; };
 		5D6EC0502AC0B11A00E7D224 /* Selection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6EC0262AC097BF00E7D224 /* Selection.swift */; };
-		5D6EC0512AC0B11D00E7D224 /* HandRank.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6EC0282AC097D200E7D224 /* HandRank.swift */; };
+		5D6EC0512AC0B11D00E7D224 /* HandStrength.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6EC0282AC097D200E7D224 /* HandStrength.swift */; };
 		5D6EC0522AC0B11F00E7D224 /* Mode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6EC02A2AC097E900E7D224 /* Mode.swift */; };
 		5D6EC0532AC0B12100E7D224 /* UIScreen+CurrentScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6EC0192AC096F000E7D224 /* UIScreen+CurrentScreen.swift */; };
 		5D6EC0542AC0B12400E7D224 /* Color+Gruvbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6EC01B2AC0971C00E7D224 /* Color+Gruvbox.swift */; };
 		5D6EC0552AC0B12B00E7D224 /* CommonButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6EC0162AC096C900E7D224 /* CommonButtonStyle.swift */; };
-		5D6EC0562AC0B12E00E7D224 /* WhatsTheNutsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6EBFEB2AC096A500E7D224 /* WhatsTheNutsApp.swift */; };
-		5D6EC0572AC0B15700E7D224 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6EC02C2AC0980600E7D224 /* CardView.swift */; };
-		5D6EC0582AC0B15900E7D224 /* CommunityCardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6EC02F2AC0983400E7D224 /* CommunityCardsView.swift */; };
-		5D6EC0592AC0B15C00E7D224 /* SelectionGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6EC0322AC0986000E7D224 /* SelectionGridView.swift */; };
-		5D6EC05A2AC0B15E00E7D224 /* LaunchScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6EC0352AC09B9600E7D224 /* LaunchScreenView.swift */; };
-		5D6EC05B2AC0B16000E7D224 /* CheckButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6EC0382AC09BBA00E7D224 /* CheckButton.swift */; };
-		5D6EC05C2AC0B16300E7D224 /* FeedbackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6EC03B2AC09C1C00E7D224 /* FeedbackView.swift */; };
-		5D6EC05D2AC0B16600E7D224 /* ModePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6EC03E2AC09C5300E7D224 /* ModePicker.swift */; };
-		5D6EC05E2AC0B16800E7D224 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6EC0412AC09C9000E7D224 /* ContentView.swift */; };
+		5DBCB3AA2AC2682A00C64CFE /* Algorithms in Frameworks */ = {isa = PBXBuildFile; productRef = 5DBCB3A92AC2682A00C64CFE /* Algorithms */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,7 +66,7 @@
 		5D6EC0222AC0979F00E7D224 /* Rank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rank.swift; sourceTree = "<group>"; };
 		5D6EC0242AC097AD00E7D224 /* Suit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Suit.swift; sourceTree = "<group>"; };
 		5D6EC0262AC097BF00E7D224 /* Selection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Selection.swift; sourceTree = "<group>"; };
-		5D6EC0282AC097D200E7D224 /* HandRank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandRank.swift; sourceTree = "<group>"; };
+		5D6EC0282AC097D200E7D224 /* HandStrength.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandStrength.swift; sourceTree = "<group>"; };
 		5D6EC02A2AC097E900E7D224 /* Mode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mode.swift; sourceTree = "<group>"; };
 		5D6EC02C2AC0980600E7D224 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		5D6EC02F2AC0983400E7D224 /* CommunityCardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityCardsView.swift; sourceTree = "<group>"; };
@@ -87,7 +77,6 @@
 		5D6EC03E2AC09C5300E7D224 /* ModePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModePicker.swift; sourceTree = "<group>"; };
 		5D6EC0412AC09C9000E7D224 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		5D6EC0442AC09CED00E7D224 /* NutsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutsController.swift; sourceTree = "<group>"; };
-		5D6EC04A2AC0AA6900E7D224 /* Array+Operations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Operations.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5DBCB3AA2AC2682A00C64CFE /* Algorithms in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -170,7 +160,6 @@
 			children = (
 				5D6EC0192AC096F000E7D224 /* UIScreen+CurrentScreen.swift */,
 				5D6EC01B2AC0971C00E7D224 /* Color+Gruvbox.swift */,
-				5D6EC04A2AC0AA6900E7D224 /* Array+Operations.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -197,7 +186,7 @@
 				5D6EC0222AC0979F00E7D224 /* Rank.swift */,
 				5D6EC0242AC097AD00E7D224 /* Suit.swift */,
 				5D6EC0262AC097BF00E7D224 /* Selection.swift */,
-				5D6EC0282AC097D200E7D224 /* HandRank.swift */,
+				5D6EC0282AC097D200E7D224 /* HandStrength.swift */,
 				5D6EC02A2AC097E900E7D224 /* Mode.swift */,
 			);
 			path = Model;
@@ -228,6 +217,7 @@
 			);
 			name = WhatsTheNuts;
 			packageProductDependencies = (
+				5DBCB3A92AC2682A00C64CFE /* Algorithms */,
 			);
 			productName = WhatsTheNuts;
 			productReference = 5D6EBFE82AC096A500E7D224 /* WhatsTheNuts.app */;
@@ -280,6 +270,7 @@
 			);
 			mainGroup = 5D6EBFDF2AC096A500E7D224;
 			packageReferences = (
+				5DBCB3A82AC2682A00C64CFE /* XCRemoteSwiftPackageReference "swift-algorithms" */,
 			);
 			productRefGroup = 5D6EBFE92AC096A500E7D224 /* Products */;
 			projectDirPath = "";
@@ -316,13 +307,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				5D6EC0212AC0979000E7D224 /* Card.swift in Sources */,
-				5D6EC0292AC097D200E7D224 /* HandRank.swift in Sources */,
+				5D6EC0292AC097D200E7D224 /* HandStrength.swift in Sources */,
 				5D6EC0252AC097AD00E7D224 /* Suit.swift in Sources */,
 				5D6EBFEC2AC096A500E7D224 /* WhatsTheNutsApp.swift in Sources */,
 				5D6EC0362AC09B9600E7D224 /* LaunchScreenView.swift in Sources */,
 				5D6EC0392AC09BBA00E7D224 /* CheckButton.swift in Sources */,
 				5D6EC0332AC0986000E7D224 /* SelectionGridView.swift in Sources */,
-				5D6EC04B2AC0AA6900E7D224 /* Array+Operations.swift in Sources */,
 				5D6EC0422AC09C9100E7D224 /* ContentView.swift in Sources */,
 				5D6EC0452AC09CED00E7D224 /* NutsController.swift in Sources */,
 				5D6EC03F2AC09C5300E7D224 /* ModePicker.swift in Sources */,
@@ -342,26 +332,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5D6EC0572AC0B15700E7D224 /* CardView.swift in Sources */,
-				5D6EC0512AC0B11D00E7D224 /* HandRank.swift in Sources */,
-				5D6EC05E2AC0B16800E7D224 /* ContentView.swift in Sources */,
+				5D6EC0512AC0B11D00E7D224 /* HandStrength.swift in Sources */,
 				5D6EC0502AC0B11A00E7D224 /* Selection.swift in Sources */,
-				5D6EC04C2AC0AA6900E7D224 /* Array+Operations.swift in Sources */,
-				5D6EC05B2AC0B16000E7D224 /* CheckButton.swift in Sources */,
-				5D6EC05A2AC0B15E00E7D224 /* LaunchScreenView.swift in Sources */,
-				5D6EC05D2AC0B16600E7D224 /* ModePicker.swift in Sources */,
-				5D6EC0562AC0B12E00E7D224 /* WhatsTheNutsApp.swift in Sources */,
 				5D6EBFFD2AC096A700E7D224 /* WhatsTheNutsTests.swift in Sources */,
 				5D6EC0462AC09CED00E7D224 /* NutsController.swift in Sources */,
 				5D6EC0532AC0B12100E7D224 /* UIScreen+CurrentScreen.swift in Sources */,
 				5D6EC04E2AC0B11600E7D224 /* Rank.swift in Sources */,
-				5D6EC0592AC0B15C00E7D224 /* SelectionGridView.swift in Sources */,
 				5D6EC0542AC0B12400E7D224 /* Color+Gruvbox.swift in Sources */,
 				5D6EC0552AC0B12B00E7D224 /* CommonButtonStyle.swift in Sources */,
-				5D6EC05C2AC0B16300E7D224 /* FeedbackView.swift in Sources */,
 				5D6EC04F2AC0B11800E7D224 /* Suit.swift in Sources */,
 				5D6EC04D2AC0B11000E7D224 /* Card.swift in Sources */,
-				5D6EC0582AC0B15900E7D224 /* CommunityCardsView.swift in Sources */,
 				5D6EC0522AC0B11F00E7D224 /* Mode.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -647,6 +627,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		5DBCB3A82AC2682A00C64CFE /* XCRemoteSwiftPackageReference "swift-algorithms" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-algorithms.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		5DBCB3A92AC2682A00C64CFE /* Algorithms */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5DBCB3A82AC2682A00C64CFE /* XCRemoteSwiftPackageReference "swift-algorithms" */;
+			productName = Algorithms;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 5D6EBFE02AC096A500E7D224 /* Project object */;
 }

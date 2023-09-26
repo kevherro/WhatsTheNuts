@@ -1,28 +1,21 @@
 //
-//  HandRank.swift
+//  HandStrength.swift
 //  WhatsTheNuts
 //
 //  Created by Kevin Herro on 9/24/23.
 //
 
-enum HandRank:
+enum HandStrength:
   Int, CustomStringConvertible, Comparable, CaseIterable
 {
-  case low = 0
-  case onePair
-  case twoPair
-  case threeOfAKind
-  case straight
-  case flush
-  case fullHouse
-  case fourOfAKind
-  case straightFlush
-  case royalFlush
+  case high = 0
+  case onePair, twoPair, threeOfAKind, straight, flush, fullHouse, fourOfAKind, straightFlush,
+    royalFlush
 
   var description: String {
     switch self {
-    case .low:
-      return "Low"
+    case .high:
+      return "High"
     case .onePair:
       return "1 Pair"
     case .twoPair:
@@ -44,7 +37,7 @@ enum HandRank:
     }
   }
 
-  static func < (lhs: HandRank, rhs: HandRank) -> Bool {
+  static func < (lhs: HandStrength, rhs: HandStrength) -> Bool {
     return lhs.rawValue < rhs.rawValue
   }
 }

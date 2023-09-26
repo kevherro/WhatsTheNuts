@@ -8,7 +8,7 @@
 enum Rank:
   Int, Comparable, CaseIterable
 {
-  case two = 2
+  case two = 0
   case three
   case four
   case five

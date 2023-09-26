@@ -11,7 +11,7 @@ struct CheckButton: View {
   @ObservedObject var selection: Selection
   var onCheck: () -> Void
   var onReset: () -> Void
-  var correctAnswer: HandRank
+  var correctAnswer: HandStrength
 
   @State private var buttonState = CheckButtonState.default
 
@@ -107,7 +107,7 @@ private struct DuolingoButtonWrapper: View {
       VStack(spacing: 50) {
         Button(
           action: {
-            selection.currentSelection = .low
+            selection.currentSelection = .high
             selection.makeFinalSelection()
           },
           label: {
@@ -121,7 +121,7 @@ private struct DuolingoButtonWrapper: View {
           selection: selection, onCheck: {}, onReset: {},
           correctAnswer: .flush)
         CheckButton(
-          selection: selection, onCheck: {}, onReset: {}, correctAnswer: .low
+          selection: selection, onCheck: {}, onReset: {}, correctAnswer: .high
         )
       }
     }

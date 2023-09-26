@@ -8,16 +8,13 @@
 import SwiftUI
 
 struct ContentView: View {
-  @State private var communityCards: [Card]
-  @State private var nuts: Nuts
+  @State private var nutsController: NutsController
   @State private var showSlidingView = false
 
   @StateObject private var selection = Selection()
 
   init() {
-    let nutsController: NutsController = NutsController()
-    self._communityCards = State(initialValue: nutsController.communityCards)
-    self._nuts = State(initialValue: nutsController.nuts())
+    nutsController = NutsController()
   }
 
   var body: some View {
@@ -25,7 +22,7 @@ struct ContentView: View {
       Color.darkHard.ignoresSafeArea()
 
       VStack {
-        CommunityCardsView(communityCards: communityCards)
+        CommunityCardsView(communityCards: nutsController.communityCards)
           .padding(.top, 50)
 
         SelectionGridView(selection: selection)
@@ -35,8 +32,8 @@ struct ContentView: View {
 
       if showSlidingView {
         FeedbackView(
-          isCorrect: nuts.handRank == selection.finalSelection,
-          correctAnswer: nuts.handRank
+          isCorrect: nutsController.strongestHand == selection.finalSelection,
+          correctAnswer: nutsController.strongestHand
         )
         .transition(.move(edge: .bottom))
       }
@@ -52,7 +49,7 @@ struct ContentView: View {
           selection.resetSelection()
           resetController()
         },
-        correctAnswer: nuts.handRank
+        correctAnswer: nutsController.strongestHand
       )
       .padding(.bottom, 30)
     }
@@ -67,9 +64,7 @@ struct ContentView: View {
 
   private func resetController() {
     DispatchQueue.main.async {
-      let nutsController: NutsController = NutsController()
-      self._communityCards.wrappedValue = nutsController.communityCards
-      self._nuts.wrappedValue = nutsController.nuts()
+      self._nutsController.wrappedValue = NutsController()
     }
   }
 }
