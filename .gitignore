@@ -7,7 +7,6 @@
 *.xcworkspace/*
 !*.xcworkspace/contents.xcworkspacedata
 *.xcworkspace/xcuserdata/
-*.xcworkspace/xcshareddata/
 *.pbxuser
 !default.pbxuser
 *.mode1v3
@@ -24,21 +23,6 @@ xcuserdata/
 Packages/
 Package.pins
 *.xcodeproj
-
-# CocoaPods #
-#############
-Pods/
-Podfile.lock
-
-# Carthage #
-############
-Carthage/Build/
-
-# fastlane #
-############
-fastlane/report.xml
-fastlane/Preview.html
-fastlane/screenshots
 
 # Code Coverage #
 #################
