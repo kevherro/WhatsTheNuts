@@ -19,7 +19,7 @@ struct ContentView: View {
 
   var body: some View {
     ZStack(alignment: .bottom) {
-      Color.darkHard.ignoresSafeArea()
+      Color.gb_dark0_hard.ignoresSafeArea()
 
       VStack {
         RelativeProgressView()

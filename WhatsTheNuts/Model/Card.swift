@@ -5,7 +5,10 @@
 //  Created by Kevin Herro on 9/24/23.
 //
 
-struct Card: Comparable {
+import SwiftUI
+
+struct Card: Comparable, Identifiable {
+  let id: UUID = UUID()
   let rank: Rank
   let suit: Suit
 

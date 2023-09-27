@@ -8,20 +8,20 @@
 enum Suit:
   Int, CaseIterable
 {
-  case club = 0
-  case diamond
-  case heart
-  case spade
+  case clubs = 0
+  case diamonds
+  case hearts
+  case spades
 
   var iconName: String {
     switch self {
-    case .club:
+    case .clubs:
       return "suit.club.fill"
-    case .diamond:
+    case .diamonds:
       return "suit.diamond.fill"
-    case .heart:
+    case .hearts:
       return "suit.heart.fill"
-    case .spade:
+    case .spades:
       return "suit.spade.fill"
     }
   }

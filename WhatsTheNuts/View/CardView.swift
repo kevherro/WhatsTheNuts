@@ -14,9 +14,9 @@ struct CardView: View {
 
   private var color: Color {
     switch card.suit {
-    case .heart, .diamond:
+    case .hearts, .diamonds:
       return .red
-    case .club, .spade:
+    case .clubs, .spades:
       return .black
     }
   }
@@ -24,7 +24,7 @@ struct CardView: View {
   var body: some View {
     RoundedRectangle(cornerRadius: 5)
       .fill(.white)
-      .stroke(Color.brightBlue, lineWidth: 2)
+      .stroke(Color.gb_bright_blue, lineWidth: 2)
       .frame(width: 100, height: 150)
       .overlay(
         PipView(rank: card.rank, suit: card.suit)
@@ -42,39 +42,14 @@ struct CardView: View {
   }
 }
 
-// MARK: - PipView
-
-private struct PipView: View {
-  var rank: Rank
-  var suit: Suit
-
-  var body: some View {
-    VStack {
-      Text(rank.description)
-        .font(.system(size: 23, design: .rounded))
-
-      Image(systemName: suit.iconName)
-        .font(.system(size: 12, design: .rounded))
-    }
-  }
-}
-
 // MARK: - Preview
 
 #Preview {
   ZStack {
-    Color.darkHard
-    VStack {
-      HStack {
-        PipView(rank: .ace, suit: .club)
-      }
-
-      .padding(.bottom, 100)
-
-      HStack {
-        CardView(card: Card(rank: .ace, suit: .heart))
-        CardView(card: Card(rank: .ace, suit: .club))
-      }
+    Color.gb_dark0_hard
+    HStack {
+      CardView(card: Card(rank: .ace, suit: .hearts))
+      CardView(card: Card(rank: .ace, suit: .clubs))
     }
   }
 }

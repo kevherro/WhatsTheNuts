@@ -23,7 +23,7 @@ struct FeedbackView: View {
   var body: some View {
     content
       .frame(maxWidth: .infinity)
-      .background(Color.dark)
+      .background(Color.gb_dark0)
       .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
   }
 
@@ -32,14 +32,14 @@ struct FeedbackView: View {
       return AnyView(
         StatusView(
           imageName: "checkmark.circle.fill",
-          textColor: .brightGreen,
+          textColor: .gb_bright_green,
           text: "Nice!"
         )
         .frame(maxHeight: screenHeight / 7)
       )
     } else {
       return AnyView(
-        IncorrectView(correctAnswer: strongestHandResult.strength)
+        IncorrectView(strongestHandResult: strongestHandResult)
           .frame(maxHeight: screenHeight / 5.5)
       )
     }
@@ -77,30 +77,33 @@ private struct StatusView: View {
 // MARK: IncorrectView
 
 private struct IncorrectView: View {
-  var correctAnswer: HandStrength
+  var strongestHandResult: HandResult
 
   var body: some View {
     ZStack {
       StatusView(
         imageName: "x.circle.fill",
-        textColor: .brightRed,
+        textColor: .gb_bright_red,
         text: "Incorrect"
       )
+
+      MiniCardView(cards: strongestHandResult.cards)
+        .offset(x: 70, y: 5)
 
       VStack {
         HStack {
           Text("Correct answer:")
             .font(.callout)
             .fontDesign(.rounded)
-            .foregroundStyle(Color.brightRed)
+            .foregroundStyle(Color.gb_bright_red)
             .bold()
           Spacer()  // Pushes content to the left.
         }
         HStack {
-          Text(correctAnswer.description)
+          Text(strongestHandResult.strength.description)
             .font(.callout)
             .fontDesign(.rounded)
-            .foregroundStyle(Color.brightRed)
+            .foregroundStyle(Color.gb_bright_red)
           Spacer()  // Pushes content to the left.
         }
       }
@@ -124,17 +127,31 @@ private struct HandResultView: View {
 
 // MARK: - Preview
 
-//#Preview {
-//  ZStack {
-//    Color.darkHard
-//    VStack {
-//      FeedbackView(isCorrect: true, correctAnswer: HandResult(HandStrength.flush, []))
-//        .background(Color.dark)
-//      FeedbackView(isCorrect: false, correctAnswer: HandResult(HandStrength.flush, []))
-//        .background(Color.dark)
-//    }
-//    VStack {
-//      HandResultView(handResult: HandResult(HandStrength.flush, []))
-//    }
-//  }
-//}
+#Preview {
+  FeedbackViewWrapper()
+}
+
+private struct FeedbackViewWrapper: View {
+  @StateObject private var selection: Selection = Selection(finalSelection: .flush)
+
+  private let cards: [Card] = [
+    Card(rank: .ace, suit: .clubs),
+    Card(rank: .ace, suit: .spades),
+    Card(rank: .ace, suit: .hearts),
+    Card(rank: .ace, suit: .diamonds),
+    Card(rank: .king, suit: .clubs),
+  ]
+
+  var body: some View {
+    ZStack {
+      VStack {
+        FeedbackView(selection: selection, strongestHandResult: HandResult(HandStrength.flush, []))
+          .background(Color.gb_dark0)
+        FeedbackView(
+          selection: selection, strongestHandResult: HandResult(HandStrength.royalFlush, cards)
+        )
+        .background(Color.gb_dark0)
+      }
+    }
+  }
+}

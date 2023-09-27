@@ -65,19 +65,19 @@ private enum SelectionButtonState: ButtonState {
 
   var textColor: Color {
     switch self {
-    case .default: return .gray
-    case .selected: return .text
+    case .default: return .gb_gray_245
+    case .selected: return .gb_light0_hard
     }
   }
 
   var buttonColor: Color {
-    return .darkHard
+    return .gb_dark0_hard
   }
 
   var buttonShadowColor: Color {
     switch self {
-    case .default: return .gray
-    case .selected: return .text
+    case .default: return .gb_gray_245
+    case .selected: return .gb_light0_hard
     }
   }
 }
@@ -93,7 +93,7 @@ private struct SelectionViewWrapper: View {
 
   var body: some View {
     ZStack {
-      Color.darkHard
+      Color.gb_dark0_hard
       SelectionGridView(selection: selection)
     }
   }

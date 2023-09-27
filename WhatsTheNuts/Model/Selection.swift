@@ -12,6 +12,16 @@ class Selection: ObservableObject {
   @Published var currentSelection: HandStrength?
   @Published private(set) var finalSelection: HandStrength?
 
+  init(
+    pressedStates: [HandStrength: Bool] = [:],
+    currentSelection: HandStrength? = nil,
+    finalSelection: HandStrength? = nil
+  ) {
+    self.pressedStates = pressedStates
+    self.currentSelection = currentSelection
+    self.finalSelection = finalSelection
+  }
+
   func binding(for key: HandStrength) -> Binding<Bool> {
     .init(
       get: { self.pressedStates[key, default: false] },

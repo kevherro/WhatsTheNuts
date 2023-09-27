@@ -29,10 +29,10 @@ struct CommunityCardsView: View {
 
 #Preview {
   CommunityCardsView(communityCards: [
-    Card(rank: .ace, suit: .club),
-    Card(rank: .ace, suit: .spade),
-    Card(rank: .ace, suit: .heart),
-    Card(rank: .ace, suit: .diamond),
-    Card(rank: .king, suit: .club),
+    Card(rank: .ace, suit: .clubs),
+    Card(rank: .ace, suit: .spades),
+    Card(rank: .ace, suit: .hearts),
+    Card(rank: .ace, suit: .diamonds),
+    Card(rank: .king, suit: .clubs),
   ])
 }

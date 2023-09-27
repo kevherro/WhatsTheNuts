@@ -32,7 +32,7 @@ struct RelativeProgressView: View {
             currentValueLabel: {}
           )
           .rotationEffect(.degrees(180))
-          .tint(.brightGreen)
+          .tint(.gb_bright_green)
           .frame(width: UIScreen.width / 1.5)
           .onDisappear {
             timer?.invalidate()
@@ -65,7 +65,7 @@ private struct TimerButton: View {
       Image(systemName: "timer")
         .resizable()
         .frame(width: 25, height: 25)
-        .foregroundStyle(isActive ? Color.brightGreen : Color.gray)
+        .foregroundStyle(isActive ? Color.gb_bright_green : Color.gb_gray_245)
         .bold(isActive)
     }
   }

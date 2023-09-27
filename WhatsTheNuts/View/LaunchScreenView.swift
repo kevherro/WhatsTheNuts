@@ -12,7 +12,7 @@ struct LaunchScreenView: View {
 
   var body: some View {
     ZStack {
-      Color.darkHard.ignoresSafeArea()
+      Color.gb_dark0_hard.ignoresSafeArea()
       GeometryReader { geometry in
         VStack {
           Image("LaunchScreen")
@@ -22,7 +22,7 @@ struct LaunchScreenView: View {
             .scaleEffect(isAnimating ? 1.0 : 0.8)
 
           Text("What's the Nuts?")
-            .foregroundStyle(Color.text)
+            .foregroundStyle(Color.gb_light0_hard)
             .font(.largeTitle)
             .fontWeight(.bold)
             .fontDesign(.rounded)

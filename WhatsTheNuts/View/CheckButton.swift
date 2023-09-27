@@ -83,15 +83,15 @@ private enum CheckButtonState: ButtonState {
 
   var buttonColor: Color {
     switch self {
-    case .default, .correct: return .brightGreen
-    case .incorrect: return .brightRed
+    case .default, .correct: return .gb_bright_green
+    case .incorrect: return .gb_bright_red
     }
   }
 
   var buttonShadowColor: Color {
     switch self {
-    case .default, .correct: return .fadedGreen
-    case .incorrect: return .fadedRed
+    case .default, .correct: return .gb_faded_green
+    case .incorrect: return .gb_faded_red
     }
   }
 }
@@ -107,7 +107,7 @@ private struct DuolingoButtonWrapper: View {
 
   var body: some View {
     ZStack {
-      Color.darkHard
+      Color.gb_dark0_hard
       VStack(spacing: 50) {
         Button(
           action: {

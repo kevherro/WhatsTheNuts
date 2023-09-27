@@ -40,6 +40,8 @@
 		5D6EC0532AC0B12100E7D224 /* UIScreen+CurrentScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6EC0192AC096F000E7D224 /* UIScreen+CurrentScreen.swift */; };
 		5D6EC0542AC0B12400E7D224 /* Color+Gruvbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6EC01B2AC0971C00E7D224 /* Color+Gruvbox.swift */; };
 		5D6EC0552AC0B12B00E7D224 /* CommonButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6EC0162AC096C900E7D224 /* CommonButtonStyle.swift */; };
+		5DAD3D112AC465ED00C97682 /* MiniCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DAD3D102AC465ED00C97682 /* MiniCardView.swift */; };
+		5DAD3D132AC4660100C97682 /* PipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DAD3D122AC4660100C97682 /* PipView.swift */; };
 		5DBCB3AA2AC2682A00C64CFE /* Algorithms in Frameworks */ = {isa = PBXBuildFile; productRef = 5DBCB3A92AC2682A00C64CFE /* Algorithms */; };
 /* End PBXBuildFile section */
 
@@ -79,6 +81,8 @@
 		5D6EC03E2AC09C5300E7D224 /* ModePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModePicker.swift; sourceTree = "<group>"; };
 		5D6EC0412AC09C9000E7D224 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		5D6EC0442AC09CED00E7D224 /* NutsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutsController.swift; sourceTree = "<group>"; };
+		5DAD3D102AC465ED00C97682 /* MiniCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniCardView.swift; sourceTree = "<group>"; };
+		5DAD3D122AC4660100C97682 /* PipView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PipView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,6 +182,8 @@
 				5D6EC03E2AC09C5300E7D224 /* ModePicker.swift */,
 				5D6EC0412AC09C9000E7D224 /* ContentView.swift */,
 				5D2EFAE22AC3116C00148201 /* RelativeProgressView.swift */,
+				5DAD3D102AC465ED00C97682 /* MiniCardView.swift */,
+				5DAD3D122AC4660100C97682 /* PipView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -313,6 +319,7 @@
 				5D6EC0292AC097D200E7D224 /* HandStrength.swift in Sources */,
 				5D6EC0252AC097AD00E7D224 /* Suit.swift in Sources */,
 				5D2EFAE32AC3116C00148201 /* RelativeProgressView.swift in Sources */,
+				5DAD3D112AC465ED00C97682 /* MiniCardView.swift in Sources */,
 				5D6EBFEC2AC096A500E7D224 /* WhatsTheNutsApp.swift in Sources */,
 				5D6EC0362AC09B9600E7D224 /* LaunchScreenView.swift in Sources */,
 				5D6EC0392AC09BBA00E7D224 /* CheckButton.swift in Sources */,
@@ -328,6 +335,7 @@
 				5D6EC02D2AC0980600E7D224 /* CardView.swift in Sources */,
 				5D6EC01C2AC0971C00E7D224 /* Color+Gruvbox.swift in Sources */,
 				5D6EC0302AC0983400E7D224 /* CommunityCardsView.swift in Sources */,
+				5DAD3D132AC4660100C97682 /* PipView.swift in Sources */,
 				5D6EC03C2AC09C1C00E7D224 /* FeedbackView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -487,7 +495,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_ASSET_PATHS = "\"WhatsTheNuts/Preview Content\"";
 				DEVELOPMENT_TEAM = 7H4U53Q9QS;
 				ENABLE_PREVIEWS = YES;
@@ -505,7 +513,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.2;
+				MARKETING_VERSION = 3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.kevherro.WhatsTheNuts;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -524,7 +532,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_ASSET_PATHS = "\"WhatsTheNuts/Preview Content\"";
 				DEVELOPMENT_TEAM = 7H4U53Q9QS;
 				ENABLE_PREVIEWS = YES;
@@ -542,7 +550,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.2;
+				MARKETING_VERSION = 3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.kevherro.WhatsTheNuts;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
