@@ -23,7 +23,7 @@ struct FeedbackView: View {
   var body: some View {
     content
       .frame(maxWidth: .infinity)
-      .background(Color.gb_dark0)
+      .background(Color.gb_dark1)
       .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
   }
 
@@ -88,7 +88,7 @@ private struct IncorrectView: View {
       )
 
       MiniCardView(cards: strongestHandResult.cards)
-        .offset(x: 70, y: 5)
+        .offset(x: 50, y: 5)
 
       VStack {
         HStack {
@@ -109,18 +109,6 @@ private struct IncorrectView: View {
       }
       .padding(.leading, 18)
       .padding(.bottom, 32)
-    }
-  }
-}
-
-// MARK: HandResultView
-
-private struct HandResultView: View {
-  var handResult: HandResult
-
-  var body: some View {
-    ZStack {
-      Text("yayaya")
     }
   }
 }

@@ -45,6 +45,7 @@ extension Color {
 extension Color {
   static let gb_dark0_hard = Color(hex: "#1d2021")
   static let gb_dark0 = Color(hex: "#282828")
+  static let gb_dark1 = Color(hex: "#3c3836")
 
   static let gb_light0_hard = Color(hex: "#f9f5d7")
 

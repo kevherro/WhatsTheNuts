@@ -11,6 +11,9 @@ import SwiftUI
 
 struct CardView: View {
   var card: Card
+  var strokeColor: Color = .gb_bright_blue
+  var lineWidth: CGFloat = 2
+  var width: CGFloat = 100
 
   private var color: Color {
     switch card.suit {
@@ -24,8 +27,8 @@ struct CardView: View {
   var body: some View {
     RoundedRectangle(cornerRadius: 5)
       .fill(.white)
-      .stroke(Color.gb_bright_blue, lineWidth: 2)
-      .frame(width: 100, height: 150)
+      .stroke(strokeColor, lineWidth: lineWidth)
+      .frame(width: width, height: 150)
       .overlay(
         PipView(rank: card.rank, suit: card.suit)
           .foregroundStyle(color)

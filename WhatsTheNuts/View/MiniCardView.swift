@@ -12,17 +12,27 @@ struct MiniCardView: View {
 
   var body: some View {
     ZStack {
-      ForEach(0..<cards.count, id: \.self) { index in
-        CardView(card: cards[cards.count - index - 1])
-          .offset(x: CGFloat(index * 26))
-      }
+      // This rectangle defines the visible area
       Rectangle()
-        .fill(Color.gb_dark0)
-        .zIndex(1)
-        .frame(width: 210, height: 80)
-        .offset(x: 52, y: 40)
+        .fill(Color.clear)  // Make sure it's clear to only use it as a clip shape
+
+      ZStack {
+        ForEach(0..<cards.count, id: \.self) { index in
+          CardView(
+            card: cards[cards.count - index - 1],
+            strokeColor: .black,
+            lineWidth: 1,
+            width: 80
+          )
+          .offset(x: CGFloat(index * 33))
+        }
+      }
+      .clipShape(
+        Rectangle()  // Clip the ZStack using a rectangle
+          .size(width: 250, height: 75)  // Define the size of the rectangle (visible area)
+      )
+      .offset(x: -50)
     }
-    .offset(x: -50)
   }
 }
 
@@ -34,8 +44,8 @@ struct MiniCardView: View {
     MiniCardView(cards: [
       Card(rank: .ace, suit: .clubs),
       Card(rank: .ace, suit: .spades),
-      Card(rank: .ace, suit: .hearts),
-      Card(rank: .ace, suit: .diamonds),
+      Card(rank: .queen, suit: .hearts),
+      Card(rank: .ten, suit: .diamonds),
       Card(rank: .king, suit: .clubs),
     ])
   }

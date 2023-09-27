@@ -221,7 +221,7 @@ extension NutsController {
         return (mask & highStraightMask) != 0
       }
       if highStraightCards.count == 5 {
-        return highStraightCards
+        return highStraightCards.sorted(by: { $0.rank.rawValue < $1.rank.rawValue })
       }
     }
 
