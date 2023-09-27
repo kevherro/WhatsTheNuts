@@ -36,8 +36,8 @@ struct ContentView: View {
 
       if showSlidingView {
         FeedbackView(
-          isCorrect: nutsController.strongestHand == selection.finalSelection,
-          correctAnswer: nutsController.strongestHand
+          selection: selection,
+          strongestHandResult: nutsController.strongestHandResult
         )
         .transition(.move(edge: .bottom))
       }
@@ -53,7 +53,7 @@ struct ContentView: View {
           selection.resetSelection()
           resetController()
         },
-        correctAnswer: nutsController.strongestHand
+        correctAnswer: nutsController.strongestHandResult.strength
       )
       .padding(.bottom, 30)
     }

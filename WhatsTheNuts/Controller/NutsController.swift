@@ -8,25 +8,27 @@
 import Algorithms
 import Dispatch
 
+typealias HandResult = (strength: HandStrength, cards: [Card])
+
 struct NutsController {
   private let deck: [Card]
   let communityCards: [Card]
-  lazy var strongestHand: HandStrength = self.nuts()
+  lazy var strongestHandResult: HandResult = self.nuts()
 
   init(round: RoundController? = nil) {
     let round = round ?? RoundController()
     deck = round.deck
     communityCards = round.communityCards
-    _ = strongestHand
+    _ = strongestHandResult
   }
 }
 
 extension NutsController {
-  private func nuts() -> HandStrength {
+  private func nuts() -> HandResult {
     let communityStrength = evaluate(communityCards)
     let filteredDeck: [Card] = deck.filter { !communityCards.contains($0) }
 
-    var strongestHand: HandStrength = communityStrength
+    var strongestHandResult: HandResult = (communityStrength, communityCards)
 
     // Instead of evaluating every combination,
     // we can optimize by considering possible hands that can beat the community hand,
@@ -35,12 +37,12 @@ extension NutsController {
       var cards = communityCards
       cards.append(contentsOf: combo)
       let strength = evaluate(cards)
-      if strength > strongestHand {
-        strongestHand = strength
+      if strength > strongestHandResult.strength {
+        strongestHandResult = (strength, cards)
       }
     }
 
-    return strongestHand
+    return strongestHandResult
   }
 
   private func evaluate(_ cards: [Card]) -> HandStrength {

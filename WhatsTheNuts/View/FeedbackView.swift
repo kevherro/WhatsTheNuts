@@ -8,8 +8,13 @@
 import SwiftUI
 
 struct FeedbackView: View {
-  var isCorrect: Bool
-  var correctAnswer: HandStrength
+  @ObservedObject var selection: Selection
+
+  var strongestHandResult: HandResult
+
+  private var isCorrect: Bool {
+    return selection.finalSelection == strongestHandResult.strength
+  }
 
   private var screenHeight: CGFloat {
     UIScreen.height
@@ -34,7 +39,7 @@ struct FeedbackView: View {
       )
     } else {
       return AnyView(
-        IncorrectView(correctAnswer: correctAnswer)
+        IncorrectView(correctAnswer: strongestHandResult.strength)
           .frame(maxHeight: screenHeight / 5.5)
       )
     }
@@ -105,16 +110,31 @@ private struct IncorrectView: View {
   }
 }
 
-// MARK: - Preview
+// MARK: HandResultView
 
-#Preview {
-  ZStack {
-    Color.darkHard
-    VStack {
-      FeedbackView(isCorrect: true, correctAnswer: .flush)
-        .background(Color.dark)
-      FeedbackView(isCorrect: false, correctAnswer: .flush)
-        .background(Color.dark)
+private struct HandResultView: View {
+  var handResult: HandResult
+
+  var body: some View {
+    ZStack {
+      Text("yayaya")
     }
   }
 }
+
+// MARK: - Preview
+
+//#Preview {
+//  ZStack {
+//    Color.darkHard
+//    VStack {
+//      FeedbackView(isCorrect: true, correctAnswer: HandResult(HandStrength.flush, []))
+//        .background(Color.dark)
+//      FeedbackView(isCorrect: false, correctAnswer: HandResult(HandStrength.flush, []))
+//        .background(Color.dark)
+//    }
+//    VStack {
+//      HandResultView(handResult: HandResult(HandStrength.flush, []))
+//    }
+//  }
+//}
