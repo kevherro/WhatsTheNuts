@@ -32,7 +32,8 @@ struct CardView: View {
       .overlay(
         PipView(rank: card.rank, suit: card.suit)
           .foregroundStyle(color)
-          .padding([.top, .leading], 7),
+          .padding(.top, 3)
+          .padding(.leading, 5),
         alignment: .topLeading
       )
       .overlay(

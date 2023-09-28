@@ -88,7 +88,7 @@ private struct IncorrectView: View {
       )
 
       MiniCardView(cards: strongestHandResult.cards)
-        .offset(x: 50, y: 5)
+        .offset(x: 70, y: 5)
 
       VStack {
         HStack {
@@ -126,7 +126,7 @@ private struct FeedbackViewWrapper: View {
     Card(rank: .ace, suit: .clubs),
     Card(rank: .ace, suit: .spades),
     Card(rank: .ace, suit: .hearts),
-    Card(rank: .ace, suit: .diamonds),
+    Card(rank: .ten, suit: .diamonds),
     Card(rank: .king, suit: .clubs),
   ]
 

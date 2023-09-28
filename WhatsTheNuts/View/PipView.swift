@@ -15,6 +15,7 @@ struct PipView: View {
     VStack {
       Text(rank.description)
         .font(.system(size: 23, design: .rounded))
+        .kerning(-1)
 
       Image(systemName: suit.iconName)
         .font(.system(size: 12, design: .rounded))
@@ -25,8 +26,11 @@ struct PipView: View {
 // MARK: - Preview
 
 #Preview {
-  ZStack {
-    Color.gb_dark0_hard
+  VStack {
     PipView(rank: .ace, suit: .clubs)
+      .padding(.bottom, 25)
+
+    PipView(rank: .queen, suit: .clubs)
+      .padding(.bottom, 25)
   }
 }

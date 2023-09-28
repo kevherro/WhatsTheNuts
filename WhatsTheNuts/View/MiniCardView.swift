@@ -24,7 +24,7 @@ struct MiniCardView: View {
             lineWidth: 1,
             width: 80
           )
-          .offset(x: CGFloat(index * 33))
+          .offset(x: CGFloat(index * 25))
         }
       }
       .clipShape(
