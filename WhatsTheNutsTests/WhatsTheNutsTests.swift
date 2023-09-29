@@ -5,6 +5,7 @@
 //  Created by Kevin Herro on 9/24/23.
 //
 
+import SwiftUI
 import XCTest
 
 @testable import WhatsTheNuts
@@ -12,11 +13,11 @@ import XCTest
 final class WhatsTheNutsTests: XCTestCase {
   func testRoyalFlush() {
     let communityCards = [
-      Card(rank: .ten, suit: .clubs),
-      Card(rank: .jack, suit: .clubs),
-      Card(rank: .queen, suit: .clubs),
-      Card(rank: .king, suit: .clubs),
-      Card(rank: .ace, suit: .clubs),
+      Card(rank: .ten, suit: .clubs, image: Image("")),
+      Card(rank: .jack, suit: .clubs, image: Image("")),
+      Card(rank: .queen, suit: .clubs, image: Image("")),
+      Card(rank: .king, suit: .clubs, image: Image("")),
+      Card(rank: .ace, suit: .clubs, image: Image("")),
     ]
 
     let roundController = RoundController(communityCards: communityCards)
@@ -27,11 +28,11 @@ final class WhatsTheNutsTests: XCTestCase {
 
   func testFourOfAKind() {
     let communityCards = [
-      Card(rank: .ten, suit: .clubs),
-      Card(rank: .ten, suit: .spades),
-      Card(rank: .seven, suit: .hearts),
-      Card(rank: .two, suit: .clubs),
-      Card(rank: .three, suit: .hearts),
+      Card(rank: .ten, suit: .clubs, image: Image("")),
+      Card(rank: .ten, suit: .spades, image: Image("")),
+      Card(rank: .seven, suit: .hearts, image: Image("")),
+      Card(rank: .two, suit: .clubs, image: Image("")),
+      Card(rank: .three, suit: .hearts, image: Image("")),
     ]
 
     let roundController = RoundController(communityCards: communityCards)
@@ -42,11 +43,11 @@ final class WhatsTheNutsTests: XCTestCase {
 
   func testStraightFlush() {
     let communityCards = [
-      Card(rank: .two, suit: .clubs),
-      Card(rank: .two, suit: .spades),
-      Card(rank: .five, suit: .clubs),
-      Card(rank: .six, suit: .clubs),
-      Card(rank: .nine, suit: .hearts),
+      Card(rank: .two, suit: .clubs, image: Image("")),
+      Card(rank: .two, suit: .spades, image: Image("")),
+      Card(rank: .five, suit: .clubs, image: Image("")),
+      Card(rank: .six, suit: .clubs, image: Image("")),
+      Card(rank: .nine, suit: .hearts, image: Image("")),
     ]
 
     let roundController = RoundController(communityCards: communityCards)

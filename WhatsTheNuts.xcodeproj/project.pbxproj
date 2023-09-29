@@ -44,6 +44,7 @@
 		5DAD3D132AC4660100C97682 /* PipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DAD3D122AC4660100C97682 /* PipView.swift */; };
 		5DB948D02AC75B1A0016B4D6 /* Deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB948CF2AC75B1A0016B4D6 /* Deck.swift */; };
 		5DBCB3AA2AC2682A00C64CFE /* Algorithms in Frameworks */ = {isa = PBXBuildFile; productRef = 5DBCB3A92AC2682A00C64CFE /* Algorithms */; };
+		5DBFDBDB2AC78DDD000BEDEC /* Deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB948CF2AC75B1A0016B4D6 /* Deck.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -348,6 +349,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5DBFDBDB2AC78DDD000BEDEC /* Deck.swift in Sources */,
 				5D6EC0512AC0B11D00E7D224 /* HandStrength.swift in Sources */,
 				5D6EC0502AC0B11A00E7D224 /* Selection.swift in Sources */,
 				5D6EBFFD2AC096A700E7D224 /* WhatsTheNutsTests.swift in Sources */,
