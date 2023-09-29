@@ -11,6 +11,7 @@ struct Card: Comparable, Identifiable {
   let id: UUID = UUID()
   let rank: Rank
   let suit: Suit
+  let image: Image
 
   static func < (lhs: Card, rhs: Card) -> Bool {
     return lhs.rank < rhs.rank

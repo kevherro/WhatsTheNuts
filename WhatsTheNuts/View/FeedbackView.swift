@@ -88,7 +88,7 @@ private struct IncorrectView: View {
       )
 
       MiniCardView(cards: strongestHandResult.cards)
-        .offset(x: 70, y: -15)
+        .offset(x: 70, y: 10)
 
       VStack {
         HStack {
@@ -122,13 +122,7 @@ private struct IncorrectView: View {
 private struct FeedbackViewWrapper: View {
   @StateObject private var selection: Selection = Selection(finalSelection: .flush)
 
-  private let cards: [Card] = [
-    Card(rank: .ace, suit: .clubs),
-    Card(rank: .ace, suit: .spades),
-    Card(rank: .ace, suit: .hearts),
-    Card(rank: .ten, suit: .diamonds),
-    Card(rank: .king, suit: .clubs),
-  ]
+  private let cards: [Card] = Array(Constants().deck.prefix(5))
 
   var body: some View {
     ZStack {

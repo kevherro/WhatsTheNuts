@@ -28,11 +28,8 @@ struct CommunityCardsView: View {
 // MARK: - Preview
 
 #Preview {
-  CommunityCardsView(communityCards: [
-    Card(rank: .ace, suit: .clubs),
-    Card(rank: .ace, suit: .spades),
-    Card(rank: .ace, suit: .hearts),
-    Card(rank: .ace, suit: .diamonds),
-    Card(rank: .king, suit: .clubs),
-  ])
+  ZStack {
+    Color.gb_dark0
+    CommunityCardsView(communityCards: Array(Constants().deck.prefix(5)))
+  }
 }

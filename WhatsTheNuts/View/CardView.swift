@@ -12,36 +12,19 @@ import SwiftUI
 struct CardView: View {
   var card: Card
   var strokeColor: Color = .gb_bright_blue
-  var lineWidth: CGFloat = 2
-  var width: CGFloat = 100
-
-  private var color: Color {
-    switch card.suit {
-    case .hearts, .diamonds:
-      return .red
-    case .clubs, .spades:
-      return .black
-    }
-  }
+  var lineWidth: CGFloat = 1
+  var cornerRadius: CGFloat = 11
+  var maxWidth: CGFloat = UIScreen.width / 2
 
   var body: some View {
-    RoundedRectangle(cornerRadius: 5)
-      .fill(.white)
-      .stroke(strokeColor, lineWidth: lineWidth)
-      .frame(width: width, height: 150)
+    card.image
+      .resizable()
+      .scaledToFit()
+      .frame(maxWidth: maxWidth)
       .overlay(
-        PipView(rank: card.rank, suit: card.suit)
-          .foregroundStyle(color)
-          .padding(.top, 3)
-          .padding(.leading, 5),
-        alignment: .topLeading
-      )
-      .overlay(
-        PipView(rank: card.rank, suit: card.suit)
-          .foregroundStyle(color)
-          .rotationEffect(.degrees(180))
-          .padding([.bottom, .trailing], 7),
-        alignment: .bottomTrailing
+        RoundedRectangle(cornerRadius: cornerRadius)
+          .fill(Color.clear)
+          .stroke(strokeColor, lineWidth: lineWidth)
       )
   }
 }
@@ -52,8 +35,7 @@ struct CardView: View {
   ZStack {
     Color.gb_dark0_hard
     HStack {
-      CardView(card: Card(rank: .ace, suit: .hearts))
-      CardView(card: Card(rank: .ace, suit: .clubs))
+      CardView(card: Constants().deck[0])
     }
   }
 }
