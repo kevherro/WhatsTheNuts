@@ -8,16 +8,11 @@
 enum HandStrength:
   Int, CustomStringConvertible, Comparable, CaseIterable
 {
-  case high = 0
-  case onePair, twoPair, threeOfAKind, straight, flush, fullHouse, fourOfAKind, straightFlush,
-    royalFlush
+  case twoPair = 0
+  case threeOfAKind, straight, flush, fullHouse, fourOfAKind, straightFlush, royalFlush
 
   var description: String {
     switch self {
-    case .high:
-      return "High"
-    case .onePair:
-      return "1 Pair"
     case .twoPair:
       return "2 Pair"
     case .threeOfAKind:

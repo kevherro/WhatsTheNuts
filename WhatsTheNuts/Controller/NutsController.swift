@@ -56,11 +56,7 @@ extension NutsController {
     if let cards = isFullHouse(bitmask: bitmask, cards: cards) { return (.fullHouse, cards) }
     if let cards = isFlush(bitmask: bitmask, cards: cards) { return (.flush, cards) }
     if let cards = isStraight(bitmask: bitmask, cards: cards) { return (.straight, cards) }
-    if let cards = isThreeOfAKind(bitmask: bitmask, cards: cards) { return (.threeOfAKind, cards) }
-    if let cards = isTwoPair(bitmask: bitmask, cards: cards) { return (.twoPair, cards) }
-    if let cards = isOnePair(bitmask: bitmask, cards: cards) { return (.onePair, cards) }
-
-    return (.high, cards)
+    return (.threeOfAKind, cards)
   }
 
   fileprivate func cardToBitmask(_ card: Card) -> UInt64 {

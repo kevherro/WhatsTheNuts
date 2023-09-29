@@ -35,12 +35,12 @@ struct FeedbackView: View {
           textColor: .gb_bright_green,
           text: "Nice!"
         )
-        .frame(maxHeight: screenHeight / 7)
+        .frame(maxHeight: screenHeight / 5.5)
       )
     } else {
       return AnyView(
         IncorrectView(strongestHandResult: strongestHandResult)
-          .frame(maxHeight: screenHeight / 5.5)
+          .frame(maxHeight: screenHeight / 4.5)
       )
     }
   }
@@ -88,7 +88,7 @@ private struct IncorrectView: View {
       )
 
       MiniCardView(cards: strongestHandResult.cards)
-        .offset(x: 70, y: 5)
+        .offset(x: 70, y: -15)
 
       VStack {
         HStack {
@@ -108,7 +108,7 @@ private struct IncorrectView: View {
         }
       }
       .padding(.leading, 18)
-      .padding(.bottom, 32)
+      .padding(.bottom, 70)
     }
   }
 }

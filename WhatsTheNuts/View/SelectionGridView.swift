@@ -15,6 +15,10 @@ struct SelectionGridView: View {
     count: 2
   )
 
+  private var buttonHeight: CGFloat {
+    return UIScreen.height / 24
+  }
+
   var body: some View {
     LazyVGrid(columns: columns) {
       ForEach(HandStrength.allCases, id: \.self) { option in
@@ -38,7 +42,10 @@ struct SelectionGridView: View {
             buttonState: SelectionButtonState(
               text: option.description,
               isSelected: selection.currentSelection == option
-            )
+            ),
+            buttonHeight: buttonHeight,
+            normalOffset: buttonHeight + 5,
+            pressedOffset: buttonHeight + 8
           )
         )
         .padding(.bottom, -30)

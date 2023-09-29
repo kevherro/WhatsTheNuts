@@ -30,14 +30,15 @@ struct CheckButton: View {
       },
       label: {
         Text(buttonState.text)
+          .font(.title2)
       }
     )
     .buttonStyle(
       CommonButtonStyle(
         buttonState: buttonState,
-        buttonHeight: 35,
-        normalOffset: 40,
-        pressedOffset: 43
+        buttonHeight: 50,
+        normalOffset: 53,
+        pressedOffset: 58
       )
     )
     .disabled(selection.currentSelection == nil)
@@ -75,10 +76,7 @@ private enum CheckButtonState: ButtonState {
   }
 
   var textColor: Color {
-    switch self {
-    case .default, .incorrect: return .black
-    case .correct: return .white
-    }
+    return .black
   }
 
   var buttonColor: Color {
@@ -111,7 +109,7 @@ private struct DuolingoButtonWrapper: View {
       VStack(spacing: 50) {
         Button(
           action: {
-            selection.currentSelection = .high
+            selection.currentSelection = .threeOfAKind
             selection.makeFinalSelection()
           },
           label: {
@@ -125,7 +123,7 @@ private struct DuolingoButtonWrapper: View {
           selection: selection, onCheck: {}, onReset: {},
           correctAnswer: .flush)
         CheckButton(
-          selection: selection, onCheck: {}, onReset: {}, correctAnswer: .high
+          selection: selection, onCheck: {}, onReset: {}, correctAnswer: .threeOfAKind
         )
       }
     }

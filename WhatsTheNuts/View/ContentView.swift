@@ -22,14 +22,12 @@ struct ContentView: View {
       Color.gb_dark0_hard.ignoresSafeArea()
 
       VStack {
-        RelativeProgressView()
-          .padding(.top, 10)
-          .padding(.bottom, 5)
-
         CommunityCardsView(communityCards: nutsController.communityCards)
-          .offset(y: 10)
+          .offset(y: 20)
+          .padding(.bottom, 10)
 
         SelectionGridView(selection: selection)
+          .offset(y: -20)
 
         Spacer()
       }

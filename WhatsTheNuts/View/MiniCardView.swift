@@ -29,7 +29,7 @@ struct MiniCardView: View {
       }
       .clipShape(
         Rectangle()  // Clip the ZStack using a rectangle
-          .size(width: 250, height: 75)  // Define the size of the rectangle (visible area)
+          .size(width: 250, height: 90)  // Define the size of the rectangle (visible area)
       )
       .offset(x: -50)
     }
