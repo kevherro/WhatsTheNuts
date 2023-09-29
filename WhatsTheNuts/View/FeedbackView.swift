@@ -35,12 +35,12 @@ struct FeedbackView: View {
           textColor: .gb_bright_green,
           text: "Nice!"
         )
-        .frame(maxHeight: screenHeight / 5.5)
+        .frame(maxHeight: screenHeight / 6)
       )
     } else {
       return AnyView(
         IncorrectView(strongestHandResult: strongestHandResult)
-          .frame(maxHeight: screenHeight / 4.5)
+          .frame(maxHeight: screenHeight / 4.9)
       )
     }
   }
@@ -61,7 +61,7 @@ private struct StatusView: View {
           .foregroundStyle(textColor)
           .padding(.trailing, 5)
         Text(text)
-          .font(.title2)
+          .font(.title)
           .fontDesign(.rounded)
           .bold()
           .foregroundStyle(textColor)
@@ -87,9 +87,6 @@ private struct IncorrectView: View {
         text: "Incorrect"
       )
 
-      MiniCardView(cards: strongestHandResult.cards)
-        .offset(x: 70, y: -15)
-
       VStack {
         HStack {
           Text("Correct answer:")
@@ -108,7 +105,7 @@ private struct IncorrectView: View {
         }
       }
       .padding(.leading, 18)
-      .padding(.bottom, 70)
+      .padding(.bottom, 50)
     }
   }
 }
@@ -122,13 +119,7 @@ private struct IncorrectView: View {
 private struct FeedbackViewWrapper: View {
   @StateObject private var selection: Selection = Selection(finalSelection: .flush)
 
-  private let cards: [Card] = [
-    Card(rank: .ace, suit: .clubs),
-    Card(rank: .ace, suit: .spades),
-    Card(rank: .ace, suit: .hearts),
-    Card(rank: .ten, suit: .diamonds),
-    Card(rank: .king, suit: .clubs),
-  ]
+  private let cards: [Card] = Array(Deck().allCards.prefix(5))
 
   var body: some View {
     ZStack {

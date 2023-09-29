@@ -20,16 +20,14 @@ struct MiniCardView: View {
         ForEach(0..<cards.count, id: \.self) { index in
           CardView(
             card: cards[cards.count - index - 1],
-            strokeColor: .black,
-            lineWidth: 1,
-            width: 80
+            width: UIScreen.width / 3
           )
-          .offset(x: CGFloat(index * 25))
+          .offset(x: CGFloat(index * 20))
         }
       }
       .clipShape(
         Rectangle()  // Clip the ZStack using a rectangle
-          .size(width: 250, height: 90)  // Define the size of the rectangle (visible area)
+          .size(width: 250, height: 65)  // Define the size of the rectangle (visible area)
       )
       .offset(x: -50)
     }
@@ -40,13 +38,7 @@ struct MiniCardView: View {
 
 #Preview {
   ZStack {
-    Color.gb_dark0
-    MiniCardView(cards: [
-      Card(rank: .ace, suit: .clubs),
-      Card(rank: .ace, suit: .spades),
-      Card(rank: .queen, suit: .hearts),
-      Card(rank: .ten, suit: .diamonds),
-      Card(rank: .king, suit: .clubs),
-    ])
+    Color.white
+    MiniCardView(cards: Array(Deck().allCards.prefix(5)))
   }
 }
