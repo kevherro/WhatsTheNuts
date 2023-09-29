@@ -1,5 +1,5 @@
 //
-//  Constants.swift
+//  Deck.swift
 //  WhatsTheNuts
 //
 //  Created by Kevin Herro on 9/29/23.
@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-public struct Constants {
-  let deck: [Card] = [
+public struct Deck {
+  let allCards: [Card] = [
     Card(rank: .ace, suit: .hearts, image: Image("ah")),
     Card(rank: .ace, suit: .diamonds, image: Image("ad")),
     Card(rank: .ace, suit: .spades, image: Image("as")),

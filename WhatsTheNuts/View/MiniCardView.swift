@@ -20,10 +20,7 @@ struct MiniCardView: View {
         ForEach(0..<cards.count, id: \.self) { index in
           CardView(
             card: cards[cards.count - index - 1],
-            strokeColor: .black,
-            lineWidth: 0.7,
-            cornerRadius: 8,
-            maxWidth: UIScreen.width / 3
+            width: UIScreen.width / 3
           )
           .offset(x: CGFloat(index * 20))
         }
@@ -41,7 +38,7 @@ struct MiniCardView: View {
 
 #Preview {
   ZStack {
-    Color.gb_dark0
-    MiniCardView(cards: Array(Constants().deck.prefix(5)))
+    Color.white
+    MiniCardView(cards: Array(Deck().allCards.prefix(5)))
   }
 }

@@ -42,7 +42,7 @@
 		5D6EC0552AC0B12B00E7D224 /* CommonButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6EC0162AC096C900E7D224 /* CommonButtonStyle.swift */; };
 		5DAD3D112AC465ED00C97682 /* MiniCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DAD3D102AC465ED00C97682 /* MiniCardView.swift */; };
 		5DAD3D132AC4660100C97682 /* PipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DAD3D122AC4660100C97682 /* PipView.swift */; };
-		5DB948D02AC75B1A0016B4D6 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB948CF2AC75B1A0016B4D6 /* Constants.swift */; };
+		5DB948D02AC75B1A0016B4D6 /* Deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB948CF2AC75B1A0016B4D6 /* Deck.swift */; };
 		5DBCB3AA2AC2682A00C64CFE /* Algorithms in Frameworks */ = {isa = PBXBuildFile; productRef = 5DBCB3A92AC2682A00C64CFE /* Algorithms */; };
 /* End PBXBuildFile section */
 
@@ -84,7 +84,7 @@
 		5D6EC0442AC09CED00E7D224 /* NutsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutsController.swift; sourceTree = "<group>"; };
 		5DAD3D102AC465ED00C97682 /* MiniCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniCardView.swift; sourceTree = "<group>"; };
 		5DAD3D122AC4660100C97682 /* PipView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PipView.swift; sourceTree = "<group>"; };
-		5DB948CF2AC75B1A0016B4D6 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		5DB948CF2AC75B1A0016B4D6 /* Deck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deck.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -199,7 +199,7 @@
 				5D6EC0262AC097BF00E7D224 /* Selection.swift */,
 				5D6EC0282AC097D200E7D224 /* HandStrength.swift */,
 				5D6EC02A2AC097E900E7D224 /* Mode.swift */,
-				5DB948CF2AC75B1A0016B4D6 /* Constants.swift */,
+				5DB948CF2AC75B1A0016B4D6 /* Deck.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -330,7 +330,7 @@
 				5D6EC0422AC09C9100E7D224 /* ContentView.swift in Sources */,
 				5D6EC0452AC09CED00E7D224 /* NutsController.swift in Sources */,
 				5D6EC03F2AC09C5300E7D224 /* ModePicker.swift in Sources */,
-				5DB948D02AC75B1A0016B4D6 /* Constants.swift in Sources */,
+				5DB948D02AC75B1A0016B4D6 /* Deck.swift in Sources */,
 				5D6EC0172AC096C900E7D224 /* CommonButtonStyle.swift in Sources */,
 				5D6EC01A2AC096F000E7D224 /* UIScreen+CurrentScreen.swift in Sources */,
 				5D6EC0272AC097BF00E7D224 /* Selection.swift in Sources */,

@@ -11,21 +11,13 @@ import SwiftUI
 
 struct CardView: View {
   var card: Card
-  var strokeColor: Color = .gb_bright_blue
-  var lineWidth: CGFloat = 1
-  var cornerRadius: CGFloat = 11
-  var maxWidth: CGFloat = UIScreen.width / 2
+  var width: CGFloat = UIScreen.width / 2
 
   var body: some View {
     card.image
       .resizable()
       .scaledToFit()
-      .frame(maxWidth: maxWidth)
-      .overlay(
-        RoundedRectangle(cornerRadius: cornerRadius)
-          .fill(Color.clear)
-          .stroke(strokeColor, lineWidth: lineWidth)
-      )
+      .frame(width: width)
   }
 }
 
@@ -35,7 +27,7 @@ struct CardView: View {
   ZStack {
     Color.gb_dark0_hard
     HStack {
-      CardView(card: Constants().deck[0])
+      CardView(card: Deck().allCards[0])
     }
   }
 }

@@ -294,7 +294,7 @@ struct RoundController {
   let communityCards: [Card]
 
   init(communityCards: [Card]? = nil) {
-    deck = Constants().deck.shuffled()
+    deck = Deck().allCards.shuffled()
 
     if let providedCommunityCards = communityCards, providedCommunityCards.count <= 5 {
       self.communityCards = providedCommunityCards
