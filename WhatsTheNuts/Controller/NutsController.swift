@@ -99,7 +99,7 @@ extension NutsController {
               straightFlushCards.append(card)
             }
           }
-          return straightFlushCards
+          return straightFlushCards.sorted(by: { $0.rank.rawValue < $1.rank.rawValue })
         }
         straightFlushMask <<= 1
       }
@@ -203,7 +203,7 @@ extension NutsController {
           return (mask & straightMask) != 0
         }
         if straightCards.count == 5 {
-          return straightCards
+          return straightCards.sorted(by: { $0.rank.rawValue < $1.rank.rawValue })
         }
       }
       straightMask <<= 1
