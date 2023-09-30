@@ -21,7 +21,7 @@ struct CheckButton: View {
   private let buttonHeight: CGFloat = 50
   private let pressedOffset: CGFloat = 58
   private let normalOffset: CGFloat = 53
-  private let stickDuration: TimeInterval = 0.2
+  private let stickyDuration: TimeInterval = 0.2
   private let feedbackGenerator = UIImpactFeedbackGenerator(style: .heavy)
 
   var body: some View {
@@ -59,7 +59,10 @@ struct CheckButton: View {
 
       isPressed.toggle()
 
-      DispatchQueue.main.asyncAfter(deadline: .now() + stickDuration) {
+      DispatchQueue.main.asyncAfter(
+        deadline: .now() + stickyDuration,
+        qos: .userInteractive
+      ) {
         isPressed.toggle()
         if buttonState == .default {
           check()

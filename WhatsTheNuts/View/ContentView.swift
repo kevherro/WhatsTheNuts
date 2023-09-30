@@ -59,8 +59,10 @@ struct ContentView: View {
   }
 
   private func toggleSlidingView() {
-    withAnimation(.snappy(duration: 0.1)) {
-      showSlidingView.toggle()
+    DispatchQueue.main.async(qos: .userInteractive) {
+      withAnimation(.snappy(duration: 0.1)) {
+        showSlidingView.toggle()
+      }
     }
   }
 
