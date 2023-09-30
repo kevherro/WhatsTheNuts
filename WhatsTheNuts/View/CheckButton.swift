@@ -9,46 +9,72 @@ import SwiftUI
 
 struct CheckButton: View {
   @ObservedObject var selection: Selection
+  var strongestHandResult: HandResult
+
   var onCheck: () -> Void
   var onReset: () -> Void
-  var correctAnswer: HandStrength
 
   @State private var buttonState = CheckButtonState.default
+  @State private var isPressed = false
+  @State private var triggerHaptics = false
+
+  private let buttonHeight: CGFloat = 50
+  private let pressedOffset: CGFloat = 58
+  private let normalOffset: CGFloat = 53
+  private let stickDuration: TimeInterval = 0.2
+  private let feedbackGenerator = UIImpactFeedbackGenerator(style: .heavy)
 
   var body: some View {
-    Button(
-      action: {
-        if selection.currentSelection == nil {
-          return
-        }
+    ZStack {
+      VStack {
+        RoundedRectangle(cornerRadius: 8, style: .continuous)
+          .fill(buttonState.buttonColor)
+          .frame(height: buttonHeight)
+          .overlay(
+            RoundedRectangle(cornerRadius: 8, style: .continuous)
+              .stroke(buttonState.buttonShadowColor, lineWidth: 1)
+          )
+          .overlay(
+            Text(buttonState.text)
+              .font(.title2)
+              .fontDesign(.rounded)
+              .foregroundStyle(buttonState.textColor)
+              .fontWeight(.bold)
+              .kerning(0.5)
+          )
+          .offset(y: isPressed ? pressedOffset : normalOffset)
+          .zIndex(1)
+        RoundedRectangle(cornerRadius: 12)
+          .stroke(buttonState.buttonShadowColor, lineWidth: 0)
+          .fill(buttonState.buttonShadowColor)
+          .frame(height: buttonHeight)
+      }
+    }
+    .padding(.horizontal)
+    .disabled(selection.currentSelection == nil)
+    .onTapGesture {
+      if selection.currentSelection == nil {
+        return
+      }
 
+      isPressed.toggle()
+
+      DispatchQueue.main.asyncAfter(deadline: .now() + stickDuration) {
+        isPressed.toggle()
         if buttonState == .default {
           check()
         } else {
           reset()
         }
-      },
-      label: {
-        Text(buttonState.text)
-          .font(.title2)
       }
-    )
-    .buttonStyle(
-      CommonButtonStyle(
-        buttonState: buttonState,
-        buttonHeight: 50,
-        normalOffset: 53,
-        pressedOffset: 58
-      )
-    )
-    .disabled(selection.currentSelection == nil)
-    .sensoryFeedback(.success, trigger: buttonState == .correct)
+    }
   }
 
   private func check() {
     onCheck()
-    if selection.finalSelection == correctAnswer {
+    if selection.finalSelection == strongestHandResult.strength {
       buttonState = .correct
+      feedbackGenerator.impactOccurred()
     } else {
       buttonState = .incorrect
     }
@@ -97,11 +123,13 @@ private enum CheckButtonState: ButtonState {
 // MARK: - Preview
 
 #Preview {
-  DuolingoButtonWrapper()
+  CheckButtonWrapper()
 }
 
-private struct DuolingoButtonWrapper: View {
+private struct CheckButtonWrapper: View {
   @StateObject private var selection = Selection()
+  var incorrect: HandResult = (.flush, [])
+  var correct: HandResult = (.threeOfAKind, [])
 
   var body: some View {
     ZStack {
@@ -120,10 +148,16 @@ private struct DuolingoButtonWrapper: View {
         .buttonStyle(.borderedProminent)
 
         CheckButton(
-          selection: selection, onCheck: {}, onReset: {},
-          correctAnswer: .flush)
+          selection: selection,
+          strongestHandResult: incorrect,
+          onCheck: {},
+          onReset: {}
+        )
         CheckButton(
-          selection: selection, onCheck: {}, onReset: {}, correctAnswer: .threeOfAKind
+          selection: selection,
+          strongestHandResult: correct,
+          onCheck: {},
+          onReset: {}
         )
       }
     }

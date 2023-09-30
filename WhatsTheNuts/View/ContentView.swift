@@ -42,6 +42,7 @@ struct ContentView: View {
 
       CheckButton(
         selection: selection,
+        strongestHandResult: nutsController.strongestHandResult,
         onCheck: {
           selection.makeFinalSelection()
           toggleSlidingView()
@@ -50,8 +51,7 @@ struct ContentView: View {
           toggleSlidingView()
           selection.resetSelection()
           resetController()
-        },
-        correctAnswer: nutsController.strongestHandResult.strength
+        }
       )
       .padding(.bottom, 30)
     }
