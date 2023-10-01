@@ -7,8 +7,6 @@
 
 import SwiftUI
 
-// MARK: CardView
-
 struct CardView: View {
   var card: Card
   var width: CGFloat = UIScreen.width / 2

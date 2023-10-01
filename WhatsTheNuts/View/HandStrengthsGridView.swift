@@ -8,59 +8,64 @@
 import SwiftUI
 
 struct HandStrengthsGridView: View {
-  @ObservedObject var selection: Selection
+  @ObservedObject var viewModel: HandStrengthViewModel
 
-  @StateObject private var viewModel = ViewModel()
-
-  private let buttons: [ButtonModel] = HandStrength.allCases.map {
-    ButtonModel(id: $0.rawValue, title: $0.description)
+  private let buttons: [HandStrengthButtonModel] = HandStrength.allCases.map {
+    HandStrengthButtonModel(id: $0.rawValue, handStrength: $0)
   }
 
   var body: some View {
-    let columns: [GridItem] = Array(repeating: .init(.flexible()), count: 2)
+    let columns: [GridItem] = Array(
+      repeating: .init(.flexible(), spacing: -20),
+      count: 2
+    )
 
     LazyVGrid(columns: columns) {
       ForEach(buttons) { button in
-        ButtonView(button: button, isSelected: viewModel.selectedButton?.id == button.id) {
+        ButtonView(
+          button: button,
+          isSelected: viewModel.selectedButton?.id == button.id
+        ) {
           viewModel.selectedButton = button
-          selection.currentSelection = HandStrength(rawValue: button.id)
         }
-        .padding(.horizontal, 9)
-        .padding(.vertical, -10)
-        .disabled(selection.finalSelection != nil)
+        .padding(.horizontal, 10)
+        .padding(.vertical, -12)
+        .disabled(viewModel.finalSelection != nil)
       }
     }
   }
 }
 
+// MARK: - ButtonView
+
 private struct ButtonView: View {
-  let button: ButtonModel
+  let button: HandStrengthButtonModel
   var isSelected: Bool
   let action: () -> Void
 
   @State private var isPressed = false
 
   var body: some View {
-    Button(isSelected: isSelected, isPressed: isPressed, text: button.title)
-      .padding(.horizontal)
-      .onTapGesture {
-        action()
+    Button(
+      isSelected: isSelected,
+      isPressed: isPressed,
+      text: button.handStrength.description
+    )
+    .padding(.horizontal)
+    .onTapGesture {
+      action()
+      isPressed.toggle()
+      DispatchQueue.main.asyncAfter(
+        deadline: .now() + 0.1,
+        qos: .userInteractive
+      ) {
         isPressed.toggle()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1, qos: .userInteractive) {
-          isPressed.toggle()
-        }
       }
+    }
   }
 }
 
-private struct ButtonModel: Identifiable {
-  let id: Int
-  let title: String
-}
-
-private class ViewModel: ObservableObject {
-  @Published var selectedButton: ButtonModel?
-}
+// MARK: - Button
 
 private struct Button: View {
   var isSelected: Bool
@@ -83,6 +88,8 @@ private struct Button: View {
     }
   }
 }
+
+// MARK: - View
 
 extension View {
   fileprivate func overlayStyling(isSelected: Bool, text: String) -> some View {
@@ -109,12 +116,12 @@ extension View {
 }
 
 private struct HandStrengthsViewWrapper: View {
-  @StateObject private var selection = Selection()
+  @StateObject private var viewModel = HandStrengthViewModel()
 
   var body: some View {
     ZStack {
       Color.gb_dark0_hard
-      HandStrengthsGridView(selection: selection)
+      HandStrengthsGridView(viewModel: viewModel)
     }
   }
 }

@@ -8,17 +8,20 @@
 import SwiftUI
 
 struct FeedbackView: View {
-  @ObservedObject var selection: Selection
-
+  @ObservedObject var viewModel: HandStrengthViewModel
   var strongestHandResult: HandResult
 
   private var isCorrect: Bool {
-    return selection.finalSelection == strongestHandResult.strength
+    return viewModel.handStrength == strongestHandResult.strength
   }
 
-  private var screenHeight: CGFloat {
-    UIScreen.height
-  }
+  private let positiveFeedback: [String] = [
+    "Nice!",
+    "Awesome!",
+    "Super!",
+    "Terrific!",
+    "Stellar!",
+  ]
 
   var body: some View {
     content
@@ -33,20 +36,20 @@ struct FeedbackView: View {
         StatusView(
           imageName: "checkmark.circle.fill",
           textColor: .gb_bright_green,
-          text: "Nice!"
+          text: positiveFeedback.randomElement() ?? "Nice!"
         )
-        .frame(maxHeight: screenHeight / 6)
+        .frame(maxHeight: UIScreen.height / 6)
       )
     } else {
       return AnyView(
         IncorrectView(strongestHandResult: strongestHandResult)
-          .frame(maxHeight: screenHeight / 4.9)
+          .frame(maxHeight: UIScreen.height / 4.5)
       )
     }
   }
 }
 
-// MARK: StatusView
+// MARK: - StatusView
 
 private struct StatusView: View {
   let imageName: String
@@ -57,11 +60,12 @@ private struct StatusView: View {
     VStack {
       HStack {
         Image(systemName: imageName)
+          .font(.title)
           .bold()
           .foregroundStyle(textColor)
           .padding(.trailing, 5)
         Text(text)
-          .font(.title)
+          .font(.largeTitle)
           .fontDesign(.rounded)
           .bold()
           .foregroundStyle(textColor)
@@ -74,7 +78,7 @@ private struct StatusView: View {
   }
 }
 
-// MARK: IncorrectView
+// MARK: - IncorrectView
 
 private struct IncorrectView: View {
   var strongestHandResult: HandResult
@@ -90,21 +94,22 @@ private struct IncorrectView: View {
       VStack {
         HStack {
           Text("Correct answer:")
-            .font(.callout)
+            .font(.title3)
             .fontDesign(.rounded)
             .foregroundStyle(Color.gb_bright_red)
-            .bold()
+            .fontWeight(.semibold)
           Spacer()  // Pushes content to the left.
         }
+        .padding(.bottom, 0.5)
         HStack {
           Text(strongestHandResult.strength.description)
-            .font(.callout)
+            .font(.headline)
             .fontDesign(.rounded)
             .foregroundStyle(Color.gb_bright_red)
           Spacer()  // Pushes content to the left.
         }
       }
-      .padding(.leading, 18)
+      .padding(.leading, 17)
       .padding(.bottom, 50)
     }
   }
@@ -117,17 +122,19 @@ private struct IncorrectView: View {
 }
 
 private struct FeedbackViewWrapper: View {
-  @StateObject private var selection: Selection = Selection(finalSelection: .flush)
-
-  private let cards: [Card] = Array(Deck().allCards.prefix(5))
+  @StateObject private var viewModel = HandStrengthViewModel()
 
   var body: some View {
     ZStack {
       VStack {
-        FeedbackView(selection: selection, strongestHandResult: HandResult(HandStrength.flush, []))
-          .background(Color.gb_dark0)
         FeedbackView(
-          selection: selection, strongestHandResult: HandResult(HandStrength.royalFlush, cards)
+          viewModel: viewModel,
+          strongestHandResult: HandResult(HandStrength.flush, [])
+        )
+        .background(Color.gb_dark0)
+        FeedbackView(
+          viewModel: viewModel,
+          strongestHandResult: HandResult(HandStrength.royalFlush, [])
         )
         .background(Color.gb_dark0)
       }

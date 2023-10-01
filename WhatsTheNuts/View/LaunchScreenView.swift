@@ -18,7 +18,7 @@ struct LaunchScreenView: View {
           Image("LaunchScreen")
             .resizable()
             .scaledToFit()
-            .frame(width: 300, height: 300)
+            .frame(width: 350, height: 350)
             .scaleEffect(isAnimating ? 1.0 : 0.8)
 
           Text("What's the Nuts?")

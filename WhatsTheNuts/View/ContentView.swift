@@ -8,13 +8,16 @@
 import SwiftUI
 
 struct ContentView: View {
-  @State private var nutsController: NutsController
+  @StateObject private var viewModel = HandStrengthViewModel()
+
+  @State private var communityCards: [Card]
+  @State private var strongestHandResult: HandResult
   @State private var showSlidingView = false
 
-  @StateObject private var selection = Selection()
-
   init() {
-    nutsController = NutsController()
+    var controller = NutsController()
+    communityCards = controller.communityCards
+    strongestHandResult = controller.strongestHandResult
   }
 
   var body: some View {
@@ -22,34 +25,33 @@ struct ContentView: View {
       Color.gb_dark0_hard.ignoresSafeArea()
 
       VStack {
-        CommunityCardsView(communityCards: nutsController.communityCards)
+        CommunityCardsView(communityCards: communityCards)
           .offset(y: 20)
           .padding(.bottom, 10)
 
-        HandStrengthsGridView(selection: selection)
-          .offset(y: -20)
+        HandStrengthsGridView(viewModel: viewModel)
 
         Spacer()
       }
 
       if showSlidingView {
         FeedbackView(
-          selection: selection,
-          strongestHandResult: nutsController.strongestHandResult
+          viewModel: viewModel,
+          strongestHandResult: strongestHandResult
         )
         .transition(.move(edge: .bottom))
       }
 
       CheckButtonView(
-        selection: selection,
-        strongestHandResult: nutsController.strongestHandResult,
+        viewModel: viewModel,
+        strongestHandResult: strongestHandResult,
         onCheck: {
-          selection.makeFinalSelection()
+          viewModel.select()
           toggleSlidingView()
         },
         onReset: {
           toggleSlidingView()
-          selection.resetSelection()
+          viewModel.reset()
           resetController()
         }
       )
@@ -68,7 +70,9 @@ struct ContentView: View {
 
   private func resetController() {
     DispatchQueue.main.async {
-      self._nutsController.wrappedValue = NutsController()
+      var controller = NutsController()
+      self._communityCards.wrappedValue = controller.communityCards
+      self._strongestHandResult.wrappedValue = controller.strongestHandResult
     }
   }
 }

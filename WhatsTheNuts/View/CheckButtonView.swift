@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct CheckButtonView: View {
-  @ObservedObject var selection: Selection
+  @ObservedObject var viewModel: HandStrengthViewModel
   var strongestHandResult: HandResult
 
   var onCheck: () -> Void
@@ -27,9 +27,9 @@ struct CheckButtonView: View {
       isPressed: isPressed
     )
     .padding(.horizontal)
-    .disabled(selection.currentSelection == nil)
+    .disabled(viewModel.selectedButton == nil)
     .onTapGesture {
-      guard selection.currentSelection != nil else { return }
+      guard viewModel.selectedButton != nil else { return }
       handleButtonAction()
     }
   }
@@ -46,7 +46,7 @@ struct CheckButtonView: View {
       if buttonState == .default {
         onCheck()
 
-        if selection.finalSelection == strongestHandResult.strength {
+        if viewModel.handStrength == strongestHandResult.strength {
           buttonState = .correct
           UIImpactFeedbackGenerator(style: .heavy).impactOccurred()
         } else {
@@ -146,7 +146,13 @@ private enum CheckButtonState {
 }
 
 private struct CheckButtonWrapper: View {
-  @StateObject private var selection = Selection()
+  @StateObject private var viewModel = HandStrengthViewModel()
+
+  private let selectedButton = HandStrengthButtonModel(
+    id: HandStrength.threeOfAKind.rawValue,
+    handStrength: .threeOfAKind
+  )
+
   var incorrect: HandResult = (.flush, [])
   var correct: HandResult = (.threeOfAKind, [])
 
@@ -156,8 +162,8 @@ private struct CheckButtonWrapper: View {
       VStack(spacing: 50) {
         Button(
           action: {
-            selection.currentSelection = .threeOfAKind
-            selection.makeFinalSelection()
+            viewModel.selectedButton = selectedButton
+            viewModel.select()
           },
           label: {
             Text("TAP TO ENABLE BUTTONS")
@@ -167,13 +173,13 @@ private struct CheckButtonWrapper: View {
         .buttonStyle(.borderedProminent)
 
         CheckButtonView(
-          selection: selection,
+          viewModel: viewModel,
           strongestHandResult: incorrect,
           onCheck: {},
           onReset: {}
         )
         CheckButtonView(
-          selection: selection,
+          viewModel: viewModel,
           strongestHandResult: correct,
           onCheck: {},
           onReset: {}

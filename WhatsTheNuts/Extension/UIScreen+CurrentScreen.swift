@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-// MARK: UIWindow
+// MARK: - UIWindow
 
 extension UIWindow {
   static var currentKey: UIWindow? {
@@ -18,7 +18,7 @@ extension UIWindow {
   }
 }
 
-// MARK: UIScreen
+// MARK: - UIScreen
 
 extension UIScreen {
   static var height: CGFloat {
