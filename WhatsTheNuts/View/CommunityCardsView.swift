@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct CommunityCardsView: View {
-  var communityCards: [Card]
+  var communityCards: [CardModel]
 
   private let width: CGFloat = UIScreen.width / 3.4
 
@@ -49,7 +49,13 @@ struct CommunityCardsView: View {
 }
 
 private struct CommunityCardsViewWrapper: View {
-  private let communityCards: [Card] = Array(Deck().allCards.shuffled().prefix(5))
+  private let communityCards: [CardModel] = Array(
+    Deck()
+      .allCards
+      .values
+      .shuffled()
+      .prefix(5)
+  )
 
   var body: some View {
     ZStack {

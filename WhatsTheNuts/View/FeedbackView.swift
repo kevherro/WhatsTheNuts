@@ -21,6 +21,8 @@ struct FeedbackView: View {
     "Super!",
     "Terrific!",
     "Stellar!",
+    "Yeehaw!",
+    "Outstanding!",
   ]
 
   var body: some View {
@@ -36,14 +38,14 @@ struct FeedbackView: View {
         StatusView(
           imageName: "checkmark.circle.fill",
           textColor: .gb_bright_green,
-          text: positiveFeedback.randomElement() ?? "Nice!"
+          text: positiveFeedback.randomElement() ?? "Yeehaw!"
         )
-        .frame(maxHeight: UIScreen.height / 6)
+        .frame(maxHeight: UIScreen.height / 5.5)
       )
     } else {
       return AnyView(
         IncorrectView(strongestHandResult: strongestHandResult)
-          .frame(maxHeight: UIScreen.height / 4.5)
+          .frame(maxHeight: UIScreen.height / 4.3)
       )
     }
   }
@@ -96,21 +98,22 @@ private struct IncorrectView: View {
           Text("Correct answer:")
             .font(.title3)
             .fontDesign(.rounded)
-            .foregroundStyle(Color.gb_bright_red)
             .fontWeight(.semibold)
+            .foregroundStyle(Color.gb_bright_red)
           Spacer()  // Pushes content to the left.
         }
-        .padding(.bottom, 0.5)
+        .padding(.top, 15)
         HStack {
           Text(strongestHandResult.strength.description)
             .font(.headline)
             .fontDesign(.rounded)
+            .fontWeight(.regular)
             .foregroundStyle(Color.gb_bright_red)
           Spacer()  // Pushes content to the left.
         }
       }
       .padding(.leading, 17)
-      .padding(.bottom, 50)
+      .padding(.bottom, 55)
     }
   }
 }
@@ -124,9 +127,25 @@ private struct IncorrectView: View {
 private struct FeedbackViewWrapper: View {
   @StateObject private var viewModel = HandStrengthViewModel()
 
+  private let selectedButton = HandStrengthButtonModel(
+    id: HandStrength.flush.rawValue,
+    handStrength: .flush
+  )
+
   var body: some View {
     ZStack {
       VStack {
+        Button(
+          action: {
+            viewModel.selectedButton = selectedButton
+            viewModel.select()
+          },
+          label: {
+            Text("TAP TO ENABLE BUTTONS")
+              .fontWeight(.bold)
+          }
+        )
+        .buttonStyle(.borderedProminent)
         FeedbackView(
           viewModel: viewModel,
           strongestHandResult: HandResult(HandStrength.flush, [])

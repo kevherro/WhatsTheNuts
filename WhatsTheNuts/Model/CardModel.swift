@@ -7,13 +7,15 @@
 
 import SwiftUI
 
-struct Card: Comparable, Identifiable {
+struct CardModel:
+  Identifiable, Comparable
+{
   let id: UUID = UUID()
   let rank: Rank
   let suit: Suit
   let image: Image
 
-  static func < (lhs: Card, rhs: Card) -> Bool {
+  static func < (lhs: CardModel, rhs: CardModel) -> Bool {
     return lhs.rank < rhs.rank
   }
 }

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct CardView: View {
-  var card: Card
+  var card: CardModel
   var width: CGFloat = UIScreen.width / 2
 
   var body: some View {
@@ -25,7 +25,7 @@ struct CardView: View {
   ZStack {
     Color.gb_dark0_hard
     HStack {
-      CardView(card: Deck().allCards[0])
+      CardView(card: Deck().allCards.first!.value)
     }
   }
 }

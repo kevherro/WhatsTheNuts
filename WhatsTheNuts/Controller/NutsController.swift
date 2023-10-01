@@ -8,11 +8,11 @@
 import Algorithms
 import Dispatch
 
-typealias HandResult = (strength: HandStrength, cards: [Card])
+typealias HandResult = (strength: HandStrength, cards: [CardModel])
 
 struct NutsController {
-  private let deck: [Card]
-  let communityCards: [Card]
+  private let deck: [CardModel]
+  let communityCards: [CardModel]
   lazy var strongestHandResult: HandResult = self.nuts()
 
   init(round: RoundController? = nil) {
@@ -26,7 +26,7 @@ struct NutsController {
 extension NutsController {
   private func nuts() -> HandResult {
     let communityStrength = evaluate(communityCards)
-    let filteredDeck: [Card] = deck.filter { !communityCards.contains($0) }
+    let filteredDeck: [CardModel] = deck.filter { !communityCards.contains($0) }
 
     var strongestHandResult: HandResult = (communityStrength.strength, communityCards)
 
@@ -45,7 +45,7 @@ extension NutsController {
     return strongestHandResult
   }
 
-  private func evaluate(_ cards: [Card]) -> HandResult {
+  private func evaluate(_ cards: [CardModel]) -> HandResult {
     let bitmask = cards.reduce(0) { $0 | cardToBitmask($1) }
 
     if let cards = isRoyalFlush(bitmask: bitmask, cards: cards) { return (.royalFlush, cards) }
@@ -59,11 +59,11 @@ extension NutsController {
     return (.threeOfAKind, cards)
   }
 
-  fileprivate func cardToBitmask(_ card: Card) -> UInt64 {
+  fileprivate func cardToBitmask(_ card: CardModel) -> UInt64 {
     return 1 << (card.rank.rawValue + (card.suit.rawValue * 13))
   }
 
-  fileprivate func isRoyalFlush(bitmask: UInt64, cards: [Card]) -> [Card]? {
+  fileprivate func isRoyalFlush(bitmask: UInt64, cards: [CardModel]) -> [CardModel]? {
     let clubsRoyalFlush: UInt64 = (1 << 12) | (1 << 11) | (1 << 10) | (1 << 9) | (1 << 8)
     let diamondsRoyalFlush: UInt64 = clubsRoyalFlush << (13 * 1)
     let heartsRoyalFlush: UInt64 = clubsRoyalFlush << (13 * 2)
@@ -84,14 +84,14 @@ extension NutsController {
     return nil
   }
 
-  fileprivate func isStraightFlush(bitmask: UInt64, cards: [Card]) -> [Card]? {
+  fileprivate func isStraightFlush(bitmask: UInt64, cards: [CardModel]) -> [CardModel]? {
     for i in 0..<4 {
       var straightFlushMask: UInt64 = (1 << 0) | (1 << 1) | (1 << 2) | (1 << 3) | (1 << 4)
       for j in 0...8 {
         let currentMask = straightFlushMask << (13 * i)
         if bitmask & currentMask == currentMask {
           // Extract the cards that make up the straight flush
-          var straightFlushCards: [Card] = []
+          var straightFlushCards: [CardModel] = []
           for k in j...(j + 4) {
             let rank = k % 13  // Convert to 0-12 rank index
             let suit = Suit(rawValue: i)  // Assuming Suit is an enum 0 = clubs, 1 = diamonds, etc.
@@ -107,7 +107,7 @@ extension NutsController {
     return nil
   }
 
-  fileprivate func isFourOfAKind(bitmask: UInt64, cards: [Card]) -> [Card]? {
+  fileprivate func isFourOfAKind(bitmask: UInt64, cards: [CardModel]) -> [CardModel]? {
     for i in 0..<13 {
       let mask: UInt64 = 1 << i
       let count = [mask, mask << 13, mask << 26, mask << 39]
@@ -122,9 +122,9 @@ extension NutsController {
     return nil
   }
 
-  fileprivate func isFullHouse(bitmask: UInt64, cards: [Card]) -> [Card]? {
+  fileprivate func isFullHouse(bitmask: UInt64, cards: [CardModel]) -> [CardModel]? {
     var threeOfAKindRank: Int? = nil
-    var threeOfAKindCards: [Card] = []
+    var threeOfAKindCards: [CardModel] = []
 
     for i in 0..<13 {
       let mask: UInt64 = 1 << i
@@ -153,7 +153,7 @@ extension NutsController {
           .reduce(0) { $0 + (bitmask & $1 != 0 ? 1 : 0) }
 
         if count == 2 {
-          var pairCards: [Card] = []
+          var pairCards: [CardModel] = []
           for j in 0..<4 {
             if bitmask & (mask << (j * 13)) != 0 {
               if let card = cards.first(where: { $0.rank.rawValue == i && $0.suit.rawValue == j }) {
@@ -169,12 +169,12 @@ extension NutsController {
     return nil
   }
 
-  fileprivate func isFlush(bitmask: UInt64, cards: [Card]) -> [Card]? {
+  fileprivate func isFlush(bitmask: UInt64, cards: [CardModel]) -> [CardModel]? {
     for i in 0..<4 {
       let suitMask: UInt64 = 0x1FFF << (13 * i)
       let count = (bitmask & suitMask).nonzeroBitCount
       if count >= 5 {
-        var flushCards: [Card] = []
+        var flushCards: [CardModel] = []
         for j in 0..<13 {
           if bitmask & (1 << (j + 13 * i)) != 0 {
             if let card = cards.first(where: { $0.rank.rawValue == j && $0.suit.rawValue == i }) {
@@ -188,7 +188,7 @@ extension NutsController {
     return nil
   }
 
-  fileprivate func isStraight(bitmask: UInt64, cards: [Card]) -> [Card]? {
+  fileprivate func isStraight(bitmask: UInt64, cards: [CardModel]) -> [CardModel]? {
     // Generate a mask that only represents ranks without considering suits
     let rankMask: UInt64 = bitmask | (bitmask >> 13) | (bitmask >> 26) | (bitmask >> 39)
 
@@ -224,7 +224,7 @@ extension NutsController {
     return nil
   }
 
-  fileprivate func isThreeOfAKind(bitmask: UInt64, cards: [Card]) -> [Card]? {
+  fileprivate func isThreeOfAKind(bitmask: UInt64, cards: [CardModel]) -> [CardModel]? {
     for i in 0..<13 {
       let mask: UInt64 = 1 << i
       let count = [mask, mask << 13, mask << 26, mask << 39]
@@ -241,7 +241,7 @@ extension NutsController {
     return nil
   }
 
-  fileprivate func isTwoPair(bitmask: UInt64, cards: [Card]) -> [Card]? {
+  fileprivate func isTwoPair(bitmask: UInt64, cards: [CardModel]) -> [CardModel]? {
     var pairsFound = 0
     var pairRanks: [Int] = []
 
@@ -269,7 +269,7 @@ extension NutsController {
     return nil
   }
 
-  fileprivate func isOnePair(bitmask: UInt64, cards: [Card]) -> [Card]? {
+  fileprivate func isOnePair(bitmask: UInt64, cards: [CardModel]) -> [CardModel]? {
     for i in 0..<13 {
       let mask: UInt64 = 1 << i
       let count = [mask, mask << 13, mask << 26, mask << 39]
@@ -290,11 +290,14 @@ extension NutsController {
 // MARK: - RoundController
 
 struct RoundController {
-  let deck: [Card]
-  let communityCards: [Card]
+  let deck: [CardModel]
+  let communityCards: [CardModel]
 
-  init(communityCards: [Card]? = nil) {
-    deck = Deck().allCards.shuffled()
+  init(communityCards: [CardModel]? = nil) {
+    deck = Deck()
+      .allCards
+      .values
+      .shuffled()
 
     if let providedCommunityCards = communityCards, providedCommunityCards.count <= 5 {
       self.communityCards = providedCommunityCards

@@ -10,7 +10,7 @@ import SwiftUI
 struct ContentView: View {
   @StateObject private var viewModel = HandStrengthViewModel()
 
-  @State private var communityCards: [Card]
+  @State private var communityCards: [CardModel]
   @State private var strongestHandResult: HandResult
   @State private var showSlidingView = false
 
