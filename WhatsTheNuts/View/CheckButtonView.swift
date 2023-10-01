@@ -18,55 +18,42 @@ struct CheckButtonView: View {
   @State private var isPressed = false
 
   private let buttonHeight: CGFloat = 50
-  private let pressedOffset: CGFloat = 58
-  private let normalOffset: CGFloat = 53
-  private let stickyDuration: TimeInterval = 0.2
-  private let feedbackGenerator = UIImpactFeedbackGenerator(style: .heavy)
+  private let stickyDuration: TimeInterval = 0.08
 
   var body: some View {
     CheckButton(
       buttonState: buttonState,
       buttonHeight: buttonHeight,
-      pressedOffset: pressedOffset,
-      normalOffset: normalOffset,
       isPressed: isPressed
     )
     .padding(.horizontal)
     .disabled(selection.currentSelection == nil)
     .onTapGesture {
-      if selection.currentSelection == nil {
-        return
-      }
+      guard selection.currentSelection != nil else { return }
+      handleButtonAction()
+    }
+  }
 
+  private func handleButtonAction() {
+    isPressed.toggle()
+
+    DispatchQueue.main.asyncAfter(deadline: .now() + stickyDuration) {
       isPressed.toggle()
 
-      DispatchQueue.main.asyncAfter(
-        deadline: .now() + stickyDuration,
-        qos: .userInteractive
-      ) {
-        isPressed.toggle()
-        if buttonState == .default {
-          check()
+      if buttonState == .default {
+        onCheck()
+
+        if selection.finalSelection == strongestHandResult.strength {
+          buttonState = .correct
+          UIImpactFeedbackGenerator(style: .heavy).impactOccurred()
         } else {
-          reset()
+          buttonState = .incorrect
         }
+      } else {
+        onReset()
+        buttonState = .default
       }
     }
-  }
-
-  private func check() {
-    onCheck()
-    if selection.finalSelection == strongestHandResult.strength {
-      buttonState = .correct
-      feedbackGenerator.impactOccurred()
-    } else {
-      buttonState = .incorrect
-    }
-  }
-
-  private func reset() {
-    onReset()
-    buttonState = .default
   }
 }
 
@@ -75,9 +62,10 @@ struct CheckButtonView: View {
 private struct CheckButton: View {
   var buttonState: CheckButtonState
   var buttonHeight: CGFloat
-  var pressedOffset: CGFloat
-  var normalOffset: CGFloat
   var isPressed: Bool
+
+  private let pressedOffset: CGFloat = 58
+  private let normalOffset: CGFloat = 53
 
   var body: some View {
     ZStack {
