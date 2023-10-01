@@ -1,5 +1,5 @@
 //
-//  CheckButton.swift
+//  CheckButtonView.swift
 //  WhatsTheNuts
 //
 //  Created by Kevin Herro on 9/24/23.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct CheckButton: View {
+struct CheckButtonView: View {
   @ObservedObject var selection: Selection
   var strongestHandResult: HandResult
 
@@ -16,7 +16,6 @@ struct CheckButton: View {
 
   @State private var buttonState = CheckButtonState.default
   @State private var isPressed = false
-  @State private var triggerHaptics = false
 
   private let buttonHeight: CGFloat = 50
   private let pressedOffset: CGFloat = 58
@@ -25,31 +24,13 @@ struct CheckButton: View {
   private let feedbackGenerator = UIImpactFeedbackGenerator(style: .heavy)
 
   var body: some View {
-    ZStack {
-      VStack {
-        RoundedRectangle(cornerRadius: 8, style: .continuous)
-          .fill(buttonState.buttonColor)
-          .frame(height: buttonHeight)
-          .overlay(
-            RoundedRectangle(cornerRadius: 8, style: .continuous)
-              .stroke(buttonState.buttonShadowColor, lineWidth: 1)
-          )
-          .overlay(
-            Text(buttonState.text)
-              .font(.title2)
-              .fontDesign(.rounded)
-              .foregroundStyle(buttonState.textColor)
-              .fontWeight(.bold)
-              .kerning(0.5)
-          )
-          .offset(y: isPressed ? pressedOffset : normalOffset)
-          .zIndex(1)
-        RoundedRectangle(cornerRadius: 12)
-          .stroke(buttonState.buttonShadowColor, lineWidth: 0)
-          .fill(buttonState.buttonShadowColor)
-          .frame(height: buttonHeight)
-      }
-    }
+    CheckButton(
+      buttonState: buttonState,
+      buttonHeight: buttonHeight,
+      pressedOffset: pressedOffset,
+      normalOffset: normalOffset,
+      isPressed: isPressed
+    )
     .padding(.horizontal)
     .disabled(selection.currentSelection == nil)
     .onTapGesture {
@@ -89,9 +70,53 @@ struct CheckButton: View {
   }
 }
 
+// MARK: - CheckButton
+
+private struct CheckButton: View {
+  var buttonState: CheckButtonState
+  var buttonHeight: CGFloat
+  var pressedOffset: CGFloat
+  var normalOffset: CGFloat
+  var isPressed: Bool
+
+  var body: some View {
+    ZStack {
+      VStack {
+        RoundedRectangle(
+          cornerRadius: 8,
+          style: .continuous
+        )
+        .fill(buttonState.buttonColor)
+        .frame(height: buttonHeight)
+        .overlay(
+          RoundedRectangle(
+            cornerRadius: 8,
+            style: .continuous
+          )
+          .stroke(buttonState.buttonShadowColor, lineWidth: 1)
+        )
+        .overlay(
+          Text(buttonState.text)
+            .font(.title2)
+            .fontDesign(.rounded)
+            .foregroundStyle(buttonState.textColor)
+            .fontWeight(.bold)
+            .kerning(0.5)
+        )
+        .offset(y: isPressed ? pressedOffset : normalOffset)
+        .zIndex(1)
+        RoundedRectangle(cornerRadius: 12)
+          .stroke(buttonState.buttonShadowColor, lineWidth: 0)
+          .fill(buttonState.buttonShadowColor)
+          .frame(height: buttonHeight)
+      }
+    }
+  }
+}
+
 // MARK: - CheckButtonState
 
-private enum CheckButtonState: ButtonState {
+private enum CheckButtonState {
   case `default`
   case correct
   case incorrect
@@ -150,13 +175,13 @@ private struct CheckButtonWrapper: View {
         )
         .buttonStyle(.borderedProminent)
 
-        CheckButton(
+        CheckButtonView(
           selection: selection,
           strongestHandResult: incorrect,
           onCheck: {},
           onReset: {}
         )
-        CheckButton(
+        CheckButtonView(
           selection: selection,
           strongestHandResult: correct,
           onCheck: {},

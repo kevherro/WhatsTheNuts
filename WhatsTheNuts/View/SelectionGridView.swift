@@ -37,17 +37,17 @@ struct SelectionGridView: View {
             Text(option.description)
           }
         )
-        .buttonStyle(
-          CommonButtonStyle(
-            buttonState: SelectionButtonState(
-              text: option.description,
-              isSelected: selection.currentSelection == option
-            ),
-            buttonHeight: buttonHeight,
-            normalOffset: buttonHeight + 5,
-            pressedOffset: buttonHeight + 8
-          )
-        )
+        //        .buttonStyle(
+        //          CommonButtonStyle(
+        //            buttonState: SelectionButtonState(
+        //              text: option.description,
+        //              isSelected: selection.currentSelection == option
+        //            ),
+        //            buttonHeight: buttonHeight,
+        //            normalOffset: buttonHeight + 5,
+        //            pressedOffset: buttonHeight + 8
+        //          )
+        //        )
         .padding(.bottom, -30)
         .disabled(selection.finalSelection != nil)
       }
@@ -58,7 +58,7 @@ struct SelectionGridView: View {
 
 // MARK: - SelectionButtonState
 
-private enum SelectionButtonState: ButtonState {
+private enum SelectionButtonState {
   case `default`
   case selected
 

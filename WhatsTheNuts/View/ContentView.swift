@@ -26,7 +26,7 @@ struct ContentView: View {
           .offset(y: 20)
           .padding(.bottom, 10)
 
-        SelectionGridView(selection: selection)
+        HandStrengthsGridView(selection: selection)
           .offset(y: -20)
 
         Spacer()
@@ -40,7 +40,7 @@ struct ContentView: View {
         .transition(.move(edge: .bottom))
       }
 
-      CheckButton(
+      CheckButtonView(
         selection: selection,
         strongestHandResult: nutsController.strongestHandResult,
         onCheck: {

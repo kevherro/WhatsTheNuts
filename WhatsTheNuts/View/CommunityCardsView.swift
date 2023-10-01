@@ -10,7 +10,7 @@ import SwiftUI
 struct CommunityCardsView: View {
   var communityCards: [Card]
 
-  private let width: CGFloat = UIScreen.width / 3.7
+  private let width: CGFloat = UIScreen.width / 3.4
 
   var body: some View {
     VStack {
