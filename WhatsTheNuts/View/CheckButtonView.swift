@@ -37,7 +37,10 @@ struct CheckButtonView: View {
   private func handleButtonAction() {
     isPressed.toggle()
 
-    DispatchQueue.main.asyncAfter(deadline: .now() + stickyDuration) {
+    DispatchQueue.main.asyncAfter(
+      deadline: .now() + stickyDuration,
+      qos: .userInteractive
+    ) {
       isPressed.toggle()
 
       if buttonState == .default {
