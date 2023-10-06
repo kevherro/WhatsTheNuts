@@ -25,7 +25,7 @@ struct CardView: View {
   ZStack {
     Color.gb_dark0_hard
     HStack {
-      CardView(card: Deck().allCards.first!.value)
+      CardView(card: Deck().allCards[.aceOfClubs]!)
     }
   }
 }
