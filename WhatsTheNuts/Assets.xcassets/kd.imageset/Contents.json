@@ -1,17 +1,15 @@
 {
   "images" : [
     {
-      "filename" : "kd.png",
+      "filename" : "tiny-kd.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "kd 1.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "kd 2.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

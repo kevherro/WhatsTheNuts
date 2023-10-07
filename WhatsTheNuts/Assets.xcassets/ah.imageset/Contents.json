@@ -1,17 +1,15 @@
 {
   "images" : [
     {
-      "filename" : "ah.png",
+      "filename" : "tiny-ah.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "ah 1.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "ah 2.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

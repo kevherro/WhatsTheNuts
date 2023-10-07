@@ -1,17 +1,15 @@
 {
   "images" : [
     {
-      "filename" : "qc.png",
+      "filename" : "tiny-qc.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "qc 1.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "qc 2.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

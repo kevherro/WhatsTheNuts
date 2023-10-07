@@ -1,17 +1,15 @@
 {
   "images" : [
     {
-      "filename" : "jd.png",
+      "filename" : "tiny-jd.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "jd 1.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "jd 2.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

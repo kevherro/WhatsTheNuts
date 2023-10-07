@@ -1,17 +1,15 @@
 {
   "images" : [
     {
-      "filename" : "5d.png",
+      "filename" : "tiny-5d.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "5d 1.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "5d 2.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

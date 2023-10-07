@@ -1,17 +1,15 @@
 {
   "images" : [
     {
-      "filename" : "js.png",
+      "filename" : "tiny-js.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "js 1.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "js 2.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
