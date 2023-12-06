@@ -25,7 +25,10 @@ final class WhatsTheNutsTests: XCTestCase {
     let roundController = RoundController(communityCards: communityCards)
     var nutsController = NutsController(round: roundController)
 
-    XCTAssertEqual(nutsController.strongestHandResult.strength, HandStrength.royalFlush)
+    XCTAssertEqual(
+      nutsController.strongestHandResult.strength,
+      HandStrength.royalFlush
+    )
   }
 
   func testFourOfAKind() {
@@ -40,7 +43,10 @@ final class WhatsTheNutsTests: XCTestCase {
     let roundController = RoundController(communityCards: communityCards)
     var nutsController = NutsController(round: roundController)
 
-    XCTAssertEqual(nutsController.strongestHandResult.strength, HandStrength.fourOfAKind)
+    XCTAssertEqual(
+      nutsController.strongestHandResult.strength,
+      HandStrength.fourOfAKind
+    )
   }
 
   func testStraightFlush() {
@@ -55,6 +61,9 @@ final class WhatsTheNutsTests: XCTestCase {
     let roundController = RoundController(communityCards: communityCards)
     var nutsController = NutsController(round: roundController)
 
-    XCTAssertEqual(nutsController.strongestHandResult.strength, HandStrength.straightFlush)
+    XCTAssertEqual(
+      nutsController.strongestHandResult.strength,
+      HandStrength.straightFlush
+    )
   }
 }

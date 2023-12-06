@@ -95,7 +95,10 @@ extension View {
   fileprivate func overlayStyling(isSelected: Bool, text: String) -> some View {
     self.overlay(
       RoundedRectangle(cornerRadius: 8, style: .continuous)
-        .stroke(isSelected ? Color.gb_light0_hard : Color.gb_gray_245, lineWidth: 1)
+        .stroke(
+          isSelected ? Color.gb_light0_hard : Color.gb_gray_245,
+          lineWidth: 1
+        )
     )
     .overlay(
       Text(text)

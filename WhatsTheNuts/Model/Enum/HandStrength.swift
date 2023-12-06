@@ -9,7 +9,8 @@ enum HandStrength:
   Int, CustomStringConvertible, Comparable, CaseIterable
 {
   case twoPair = 0
-  case threeOfAKind, straight, flush, fullHouse, fourOfAKind, straightFlush, royalFlush
+  case threeOfAKind, straight, flush, fullHouse, fourOfAKind, straightFlush,
+    royalFlush
 
   var description: String {
     switch self {

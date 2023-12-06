@@ -13,7 +13,6 @@ struct CardModel:
   let id: UUID = UUID()
   let rank: Rank
   let suit: Suit
-  let image: Image
 
   static func < (lhs: CardModel, rhs: CardModel) -> Bool {
     return lhs.rank < rhs.rank

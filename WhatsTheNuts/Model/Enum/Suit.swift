@@ -12,4 +12,17 @@ enum Suit:
   case diamonds
   case hearts
   case spades
+
+  var iconName: String {
+    switch self {
+    case .clubs:
+      return "suit.club.fill"
+    case .diamonds:
+      return "suit.diamond.fill"
+    case .hearts:
+      return "suit.heart.fill"
+    case .spades:
+      return "suit.spade.fill"
+    }
+  }
 }
