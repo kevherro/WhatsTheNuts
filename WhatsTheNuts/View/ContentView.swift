@@ -8,16 +8,19 @@
 import SwiftUI
 
 struct ContentView: View {
-  @StateObject private var viewModel = HandStrengthViewModel()
+  @StateObject private var handStrengthViewModel = HandStrengthViewModel()
+  @StateObject private var nutsViewModel = NutsViewModel()
 
-  @State private var communityCards: [CardModel]
-  @State private var strongestHandResult: HandResult
-  @State private var showSlidingView = false
+  private var communityCards: [CardModel] {
+    return nutsViewModel.communityCards
+  }
 
-  init() {
-    var controller = NutsController()
-    communityCards = controller.communityCards
-    strongestHandResult = controller.strongestHandResult
+  private var expected: HandStrength {
+    return nutsViewModel.nuts.strength
+  }
+
+  private var actual: HandStrength? {
+    return handStrengthViewModel.handStrength
   }
 
   var body: some View {
@@ -25,54 +28,40 @@ struct ContentView: View {
       Color.gb_dark0_hard.ignoresSafeArea()
 
       VStack {
-        CommunityCardsView(communityCards: communityCards)
+        CommunityCardsView(nutsViewModel: nutsViewModel)
           .offset(y: 20)
           .padding(.bottom, 10)
 
-        HandStrengthsGridView(viewModel: viewModel)
+        HandStrengthGridView(
+          handStrengthViewModel: handStrengthViewModel,
+          nutsViewModel: nutsViewModel
+        )
+        .offset(y: 25)
 
         Spacer()
       }
 
-      if showSlidingView {
-        FeedbackView(
-          viewModel: viewModel,
-          strongestHandResult: strongestHandResult
-        )
-        .transition(.move(edge: .bottom))
-      }
-
       CheckButtonView(
-        viewModel: viewModel,
-        strongestHandResult: strongestHandResult,
+        condition: {
+          expected == actual
+        },
         onCheck: {
-          viewModel.select()
-          toggleSlidingView()
+          handStrengthViewModel.lock()
         },
         onReset: {
-          toggleSlidingView()
-          viewModel.reset()
-          resetController()
+          startNewRound()
         }
       )
+      .disabled(handStrengthViewModel.selectedButton == nil)
       .padding(.bottom, 30)
     }
     .ignoresSafeArea(edges: .bottom)
   }
 
-  private func toggleSlidingView() {
-    DispatchQueue.main.async(qos: .userInteractive) {
-      withAnimation(.snappy(duration: 0.1)) {
-        showSlidingView.toggle()
-      }
-    }
-  }
-
-  private func resetController() {
+  private func startNewRound() {
     DispatchQueue.main.async {
-      var controller = NutsController()
-      self._communityCards.wrappedValue = controller.communityCards
-      self._strongestHandResult.wrappedValue = controller.strongestHandResult
+      self.nutsViewModel.startNewRound()
+      self.handStrengthViewModel.startNewRound()
     }
   }
 }

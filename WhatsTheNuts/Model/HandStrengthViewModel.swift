@@ -12,27 +12,36 @@ import SwiftUI
 class HandStrengthViewModel: ObservableObject {
   @Published var selectedButton: HandStrengthButtonModel?
   @Published var finalSelection: HandStrengthButtonModel?
+  @Published var shouldRefreshButtons: Bool = false
 
-  var handStrength: HandStrength {
-    guard let rawValue = finalSelection?.id else { return .twoPair }
-    return HandStrength(rawValue: rawValue)!
+  var handStrength: HandStrength? {
+    return finalSelection?.handStrength ?? selectedButton?.handStrength
   }
 
-  func select() {
+  func lock() {
     finalSelection = selectedButton
   }
 
-  func reset() {
+  func startNewRound() {
     DispatchQueue.main.async {
       self.selectedButton = nil
       self.finalSelection = nil
+      self.shouldRefreshButtons = true
     }
+  }
+
+  func resetRefreshTrigger() {
+    shouldRefreshButtons = false
   }
 }
 
 // MARK: - HandStrengthButtonModel
 
-struct HandStrengthButtonModel: Identifiable {
+struct HandStrengthButtonModel: Identifiable & CustomStringConvertible {
   let id: Int
   let handStrength: HandStrength
+
+  var description: String {
+    return handStrength.description
+  }
 }

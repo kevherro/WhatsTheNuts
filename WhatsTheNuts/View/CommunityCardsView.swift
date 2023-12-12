@@ -8,34 +8,31 @@
 import SwiftUI
 
 struct CommunityCardsView: View {
-  var communityCards: [CardModel]
+  @ObservedObject var nutsViewModel: NutsViewModel
 
-  private let width: CGFloat = UIScreen.width / 3.4
+  private var communityCards: [CardModel] {
+    return nutsViewModel.communityCards
+  }
 
   var body: some View {
     VStack {
       HStack {
         CardView(
-          card: communityCards[0],
-          width: width
+          card: communityCards[0]
         )
         CardView(
-          card: communityCards[1],
-          width: width
+          card: communityCards[1]
         )
         CardView(
-          card: communityCards[2],
-          width: width
+          card: communityCards[2]
         )
       }
       HStack {
         CardView(
-          card: communityCards[3],
-          width: width
+          card: communityCards[3]
         )
         CardView(
-          card: communityCards[4],
-          width: width
+          card: communityCards[4]
         )
       }
     }
@@ -49,18 +46,12 @@ struct CommunityCardsView: View {
 }
 
 private struct CommunityCardsViewWrapper: View {
-  private let communityCards: [CardModel] = Array(
-    Deck()
-      .allCards
-      .values
-      .shuffled()
-      .prefix(5)
-  )
+  @StateObject private var nutsViewModel = NutsViewModel()
 
   var body: some View {
     ZStack {
       Color.gb_dark0
-      CommunityCardsView(communityCards: communityCards)
+      CommunityCardsView(nutsViewModel: nutsViewModel)
     }
   }
 }

@@ -24,7 +24,7 @@ struct NutsController {
 }
 
 extension NutsController {
-  private func nuts() -> HandResult {
+  func nuts() -> HandResult {
     let communityStrength = evaluate(communityCards)
     let filteredDeck: [CardModel] = deck.filter { !communityCards.contains($0) }
 

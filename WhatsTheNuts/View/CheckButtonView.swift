@@ -8,28 +8,27 @@
 import SwiftUI
 
 struct CheckButtonView: View {
-  @ObservedObject var viewModel: HandStrengthViewModel
-  var strongestHandResult: HandResult
-
+  var condition: () -> Bool
   var onCheck: () -> Void
   var onReset: () -> Void
+
+  var width: CGFloat = 350
+  var height: CGFloat = 60
 
   @State private var buttonState = CheckButtonState.default
   @State private var isPressed = false
 
-  private let buttonHeight: CGFloat = 50
   private let stickyDuration: TimeInterval = 0.08
 
   var body: some View {
     CheckButton(
       buttonState: buttonState,
-      buttonHeight: buttonHeight,
+      width: width,
+      height: height,
       isPressed: isPressed
     )
     .padding(.horizontal)
-    .disabled(viewModel.selectedButton == nil)
     .onTapGesture {
-      guard viewModel.selectedButton != nil else { return }
       handleButtonAction()
     }
   }
@@ -46,7 +45,7 @@ struct CheckButtonView: View {
       if buttonState == .default {
         onCheck()
 
-        if viewModel.handStrength == strongestHandResult.strength {
+        if condition() {
           buttonState = .correct
           UIImpactFeedbackGenerator(style: .heavy).impactOccurred()
         } else {
@@ -64,43 +63,48 @@ struct CheckButtonView: View {
 
 private struct CheckButton: View {
   var buttonState: CheckButtonState
-  var buttonHeight: CGFloat
+  var width: CGFloat
+  var height: CGFloat
   var isPressed: Bool
-
-  private let pressedOffset: CGFloat = 58
-  private let normalOffset: CGFloat = 53
 
   var body: some View {
     ZStack {
-      VStack {
+      RoundedRectangle(
+        cornerRadius: 8,
+        style: .continuous
+      )
+      .fill(buttonState.buttonColor)
+      .frame(
+        width: width,
+        height: height
+      )
+      .overlay(
         RoundedRectangle(
           cornerRadius: 8,
           style: .continuous
         )
-        .fill(buttonState.buttonColor)
-        .frame(height: buttonHeight)
-        .overlay(
-          RoundedRectangle(
-            cornerRadius: 8,
-            style: .continuous
-          )
-          .stroke(buttonState.buttonShadowColor, lineWidth: 1)
+        .stroke(
+          buttonState.buttonShadowColor,
+          lineWidth: 1
         )
-        .overlay(
-          Text(buttonState.text)
-            .font(.title2)
-            .fontDesign(.rounded)
-            .foregroundStyle(buttonState.textColor)
-            .fontWeight(.bold)
-            .kerning(0.5)
+      )
+      .overlay(
+        Text(buttonState.text)
+          .font(.title2)
+          .fontDesign(.rounded)
+          .foregroundStyle(buttonState.textColor)
+          .fontWeight(.bold)
+          .kerning(0.5)
+      )
+      .offset(y: isPressed ? 0 : -2.8)
+      .zIndex(1)
+      RoundedRectangle(cornerRadius: 11)
+        .stroke(buttonState.buttonShadowColor)
+        .fill(buttonState.buttonShadowColor)
+        .frame(
+          width: width,
+          height: height
         )
-        .offset(y: isPressed ? pressedOffset : normalOffset)
-        .zIndex(1)
-        RoundedRectangle(cornerRadius: 12)
-          .stroke(buttonState.buttonShadowColor, lineWidth: 0)
-          .fill(buttonState.buttonShadowColor)
-          .frame(height: buttonHeight)
-      }
     }
   }
 }
@@ -126,14 +130,16 @@ private enum CheckButtonState {
 
   var buttonColor: Color {
     switch self {
-    case .default, .correct: return .gb_bright_green
+    case .default: return .gb_bright_yellow
+    case .correct: return .gb_bright_green
     case .incorrect: return .gb_bright_red
     }
   }
 
   var buttonShadowColor: Color {
     switch self {
-    case .default, .correct: return .gb_faded_green
+    case .default: return .gb_faded_yellow
+    case .correct: return .gb_faded_green
     case .incorrect: return .gb_faded_red
     }
   }
@@ -142,49 +148,19 @@ private enum CheckButtonState {
 // MARK: - Preview
 
 #Preview {
-  CheckButtonWrapper()
-}
-
-private struct CheckButtonWrapper: View {
-  @StateObject private var viewModel = HandStrengthViewModel()
-
-  private let selectedButton = HandStrengthButtonModel(
-    id: HandStrength.threeOfAKind.rawValue,
-    handStrength: .threeOfAKind
-  )
-
-  var incorrect: HandResult = (.flush, [])
-  var correct: HandResult = (.threeOfAKind, [])
-
-  var body: some View {
-    ZStack {
-      Color.gb_dark0_hard
-      VStack(spacing: 50) {
-        Button(
-          action: {
-            viewModel.selectedButton = selectedButton
-            viewModel.select()
-          },
-          label: {
-            Text("TAP TO ENABLE BUTTONS")
-              .fontWeight(.bold)
-          }
-        )
-        .buttonStyle(.borderedProminent)
-
-        CheckButtonView(
-          viewModel: viewModel,
-          strongestHandResult: incorrect,
-          onCheck: {},
-          onReset: {}
-        )
-        CheckButtonView(
-          viewModel: viewModel,
-          strongestHandResult: correct,
-          onCheck: {},
-          onReset: {}
-        )
-      }
+  ZStack {
+    Color.gb_dark0_hard
+    VStack(spacing: 50) {
+      CheckButtonView(
+        condition: { HandStrength.flush == HandStrength.straight },
+        onCheck: {},
+        onReset: {}
+      )
+      CheckButtonView(
+        condition: { HandStrength.flush == HandStrength.straight },
+        onCheck: {},
+        onReset: {}
+      )
     }
   }
 }
